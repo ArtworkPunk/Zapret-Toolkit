@@ -1,0 +1,384 @@
+# Google/YouTube
+youtube.com
+*.youtube.com
+googlevideo.com
+*.googlevideo.com
+youtubei.googleapis.com
+ytimg.com
+*.ytimg.com
+i.ytimg.com
+yt3.ggpht.com
+music.youtube.com
+youtu.be
+*.music.youtube.com
+www.music.youtube.com
+m.music.youtube.com
+
+# Twitch
+twitch.tv
+#*.twitch.tv
+#*.ttvnw.net
+#*.jtvnw.net
+#*.video-edge*.ttvnw.net
+#usher.ttvnw.net
+
+# TikTok
+tiktok.com
+*.tiktok.com
+*.tiktokcdn.com
+*.tiktokv.com
+vm.tiktok.com
+vt.tiktok.com
+
+# Discord
+discord.com
+*.discord.com
+*.discordapp.com
+*.discord.gg
+*.discord.media
+
+# Telegram
+telegram.org
+*.telegram.org
+*.t.me
+*.telegram.me
+
+# WhatsApp
+whatsapp.com
+*.whatsapp.com
+web.whatsapp.com
+
+# Instagram/Facebook
+instagram.com
+*.instagram.com
+facebook.com
+*.facebook.com
+
+# Twitter/X
+twitter.com
+*.twitter.com
+x.com
+*.x.com
+
+# Другие популярные
+reddit.com
+*.reddit.com
+pinterest.com
+*.pinterest.com
+ru.pinterest.com
+github.com
+*.github.com
+netflix.com
+*.netflix.com
+spotify.com
+*.spotify.com
+vk.com
+*.vk.com
+ok.ru
+*.ok.ru
+whatsapp.com
+*.whatsapp.com
+web.whatsapp.com
+*.whatsapp.net
+*.wa.me
+*.fbcdn.net
+*.fbsbx.com
+
+# Игры
+store.steampowered.com
+steamcommunity.com
+epicgames.com
+store.epicgames.com
+roblox.com
+*.roblox.com
+
+# Google AI и инструменты
+aistudio.google.com
+*.aistudio.google.com
+ai.google
+*.ai.google
+generativeai.google
+*.generativeai.google
+bard.google.com
+*.bard.google.com
+gemini.google.com
+*.gemini.google.com
+palm-api.google.com
+*.palm-api.google.com
+makersuite.google.com
+*.makersuite.google.com
+
+# Discord Media сервера (стримы, видео, голос)
+*.discord.media
+*.discordapp.net
+*.discord.com
+*.discord.co
+*.discord.gg
+*.discord.gift
+*.discord.activities
+*.discordapp.com
+*.discordstatus.com
+edge-voice.discord.media
+*.edge-voice.discord.media
+*.dl.discordapp.net
+*.media.discordapp.net
+*.cdn.discordapp.com
+*.voice.discord.media
+
+# Основные EU сервера EA/Apex
+*.g.s.ea.com
+*.gos.ea.com
+*.gos2.ea.com
+*.ea.com
+*.origin.com
+
+# EU датацентры Apex
+atlas-rna-dub.ea.com
+atlas-rna-fra.ea.com
+atlas-rna-lhr.ea.com
+atlas-rna-ams.ea.com
+atlas-rna-mad.ea.com
+atlas-rna-waw.ea.com
+
+# Аутентификация и матчмейкинг (EU)
+accounts.ea.com
+gateway.ea.com
+r5eu-apex-legends.go-directed.com
+*.r5eu-apex-legends.go-directed.com
+
+# Контент и обновления (EU CDN)
+*.content.ea.com
+*.blob.core.windows.net
+*.eaassets-eu-a.akamaihd.net
+*.eaassets-eu-b.akamaihd.net
+
+# Голосовой чат и P2P (EU)
+stun-eu.l.google.com
+stun1-eu.l.google.com
+stun2-eu.l.google.com
+
+# Fornite
+
+epicgames.com
+*.epicgames.com
+unrealengine.com
+*.unrealengine.com
+*.ol.epicgames.com
+*.download.epicgames.com
+*.epicgames-download1.akamaized.net
+*.fortnite.com
+*.ecommerce.epicgames.com
+account-public-service-prod.ol.epicgames.com
+lightswitch-public-service-prod.ol.epicgames.com
+launcher-public-service-prod.ol.epicgames.com
+
+
+# Steam
+steampowered.com
+*.steampowered.com
+steamcommunity.com
+*.steamcommunity.com
+valvesoftware.com
+*.valvesoftware.com
+*.steamstatic.com
+*.steamcdn-a.akamaihd.net
+*.steamusercontent.com
+*.steambroadcast.akamaized.net
+
+# Riot Games (Valorant, League of Legends)
+riotgames.com
+*.riotgames.com
+leagueoflegends.com
+*.leagueoflegends.com
+playvalorant.com
+*.playvalorant.com
+*.ppy.sh
+*.rpd.akamaized.net
+*.akamaized.net
+
+
+# Blizzard / Battle.net (WoW, CoD, Overwatch)
+battle.net
+*.battle.net
+blizzard.com
+*.blizzard.com
+*.blzstatic.com
+*.blizzardgames.com
+*.actual.battle.net
+*.bright.blizzard.com
+
+# Rockstar Games (GTA V/Online, RDR2)
+rockstargames.com
+*.rockstargames.com
+socialclub.rockstargames.com
+*.socialclub.rockstargames.com
+*.ros.rockstargames.com
+*.prod.cloud.rockstargames.com
+
+# Ubisoft (Rainbow Six, Assassin's Creed)
+ubisoft.com
+*.ubisoft.com
+uplay.com
+*.uplay.com
+ubisoftconnect.com
+*.ubisoftconnect.com
+*.ubi.com
+*.staticctf.akamaized.net
+
+# Genshin Impact / HoYoverse
+hoyoverse.com
+*.hoyoverse.com
+mihoyo.com
+*.mihoyo.com
+genshin.hoyoverse.com
+*.genshin.hoyoverse.com
+hk4e-api-static.mihoyo.com
+
+# Minecraft / Mojang
+minecraft.net
+*.minecraft.net
+mojang.com
+*.mojang.com
+*.minecraft-services.net
+*.sessionserver.mojang.com
+
+# War Thunder / Gaijin
+warthunder.com
+*.warthunder.com
+gaijin.net
+*.gaijin.net
+*.warthunder.ru
+*.live.warthunder.com
+
+# World of Tanks / Wargaming
+worldoftanks.com
+*.worldoftanks.com
+wargaming.net
+*.wargaming.net
+*.wotapi.net
+*.wgcdn.net
+
+# Cloudflare
+cloudflare.com
+*.cloudflare.com
+*.cloudflare-dns.com
+*.cloudflareresolve.com
+*.cloudflarestatus.com
+
+# DigitalOcean
+digitalocean.com
+*.digitalocean.com
+*.do.co
+*.do.nyc
+*.do.fra
+*.ams.digitaloceanspaces.com
+
+# Hetzner
+hetzner.com
+*.hetzner.com
+*.hetzner.de
+*.hetzner.cloud
+*.cloud.hetzner.com
+*.static.hetzner.com
+
+# OVH
+ovh.com
+*.ovh.com
+*.ovh.net
+*.ovhcloud.com
+*.soyoustart.com
+*.kimsufi.com
+
+# Oracle Cloud
+oracle.com
+*.oracle.com
+*.oraclecloud.com
+*.oraclegovcloud.com
+*.oraclecdn.com
+
+# AWS (Amazon)
+amazonaws.com
+*.amazonaws.com
+*.aws
+*.aws.amazon.com
+.awsdns-.net
+*.s3.amazonaws.com
+*.s3-*.amazonaws.com
+
+# Google Cloud
+googleapis.com
+*.googleapis.com
+*.googlecloud.com
+*.gstatic.com
+*.googlehosted.com
+*.appspot.com
+*.cloudfunctions.net
+
+# Fastly
+fastly.com
+*.fastly.com
+*.fastly.net
+*.fastlylb.net
+
+# Akamai
+akamai.com
+*.akamai.com
+*.akamai.net
+*.akamaiedge.net
+*.akamaitechnologies.com
+*.edgesuite.net
+
+# CDN77
+cdn77.com
+*.cdn77.com
+*.cdn77.org
+*.cdn77.net
+
+# Scaleway
+scaleway.com
+*.scaleway.com
+*.online.net
+
+# Contabo
+contabo.com
+*.contabo.com
+*.contabo.net
+
+# Constant
+constant.com
+*.constant.com
+
+# Microsoft Azure
+azure.com
+*.azure.com
+*.azurewebsites.net
+*.blob.core.windows.net
+*.cloudapp.net
+*.trafficmanager.net
+
+# Linode
+linode.com
+*.linode.com
+*.linodeusercontent.com
+
+# Vultr
+vultr.com
+*.vultr.com
+*.vultrobjects.com
+
+# IBM Cloud
+ibm.com
+*.ibm.com
+*.cloud.ibm.com
+*.bluemix.net
+
+# Alibaba Cloud
+alibabacloud.com
+*.alibabacloud.com
+*.aliyuncs.com
+
+# Tencent Cloud
+tencent.com
+*.tencent.com
+*.myqcloud.com
+*.cloud.tencent.com

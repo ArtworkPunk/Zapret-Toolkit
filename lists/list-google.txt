@@ -1,0 +1,93 @@
+# Основные домены YouTube
+youtube.com
+*.youtube.com
+youtube-nocookie.com
+youtu.be
+youtubei.googleapis.com
+youtube.googleapis.com
+youtubeembeddedplayer.googleapis.com
+youtubekids.com
+gemini.google.com
+
+# Видео и потоковая передача
+googlevideo.com
+*.googlevideo.com
+videopress.com
+
+# Изображения и превью
+ytimg.com
+*.ytimg.com
+i.ytimg.com
+*.i.ytimg.com
+s.ytimg.com
+*.s.ytimg.com
+ytimg.l.google.com
+*.ytimg.l.google.com
+
+# Аватары и миниатюры
+yt3.ggpht.com
+yt4.ggpht.com
+yt3.googleusercontent.com
+yt4.googleusercontent.com
+lh3.googleusercontent.com
+lh4.googleusercontent.com
+lh5.googleusercontent.com
+lh6.googleusercontent.com
+ggpht.com
+*.ggpht.com
+googleusercontent.com
+*.googleusercontent.com
+
+# YouTube Music
+music.youtube.com
+*.music.youtube.com
+www.music.youtube.com
+m.music.youtube.com
+
+# YouTube Shorts
+youtube.com/shorts/*
+
+# CDN и сервисы Google
+jnn-pa.googleapis.com
+wide-youtube.l.google.com
+youtube-ui.l.google.com
+yt-video-upload.l.google.com
+
+# Discord (оставлено для совместимости)
+stable.dl2.discordapp.net
+
+# Дополнительные домены для полной поддержки
+youtube.tv
+m.youtube.com
+www.youtube.com
+studio.youtube.com
+creatoracademy.youtube.com
+ads.youtube.com
+
+# Аудио дорожки
+r*.googlevideo.com
+rr*.googlevideo.com
+
+# Геолокация и CDN
+*.c.youtube.com
+*.googlevideo.com
+
+# API и данные
+www.googleapis.com/youtube/v3/*
+data.youtube.com
+aistudio.google.com
+*.aistudio.google.com
+ai.google
+*.ai.google
+generativeai.google
+*.generativeai.google
+palm-api.google.com
+*.palm-api.google.com
+bard.google.com
+*.bard.google.com
+gemini.google.com
+*.gemini.google.com
+aiinfra.google.com
+*.aiinfra.google.com
+makersuite.google.com
+*.makersuite.google.com
