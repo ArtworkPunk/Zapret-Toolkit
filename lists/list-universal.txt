@@ -13,6 +13,8 @@ youtu.be
 *.music.youtube.com
 www.music.youtube.com
 m.music.youtube.com
+www.youtube.com
+youtube.com
 
 # Twitch
 twitch.tv
@@ -381,4 +383,5 @@ alibabacloud.com
 tencent.com
 *.tencent.com
 *.myqcloud.com
+
 *.cloud.tencent.com
