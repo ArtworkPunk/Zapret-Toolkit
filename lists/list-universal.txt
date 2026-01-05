@@ -32,12 +32,75 @@ tiktok.com
 vm.tiktok.com
 vt.tiktok.com
 
-# Discord
+# Основные домены Discord
 discord.com
 *.discord.com
-*.discordapp.com
+discord.gg
 *.discord.gg
+discordapp.com
+*.discordapp.com
+discordapp.net
+*.discordapp.net
+dis.gd
+*.dis.gd
+discord.co
+*.discord.co
+discord.new
+*.discord.new
+discord.dev
+*.discord.dev
+discord.design
+*.discord.design
+discord.style
+*.discord.style
+discord.gift
+*.discord.gift
+discord.activities
+*.discord.activities
+discordstatus.com
+*.discordstatus.com
+
+# Медиа и Стриминг (Важно для картинок и видео)
+discord.media
 *.discord.media
+voice.discord.media
+*.voice.discord.media
+video.discord.media
+*.video.discord.media
+edge-voice.discord.media
+*.edge-voice.discord.media
+media.discordapp.net
+*.media.discordapp.net
+images.discordapp.net
+*.images.discordapp.net
+cdn.discordapp.com
+*.cdn.discordapp.com
+dl.discordapp.net
+*.dl.discordapp.net
+
+# Служебные и API
+discord-preview.com
+*.discord-preview.com
+discord-registration.com
+*.discord-registration.com
+status.discord.com
+*.status.discord.com
+sentry.discord.com
+*.sentry.discord.com
+# Загрузка файлов (иногда используется S3)
+discord-attachments-uploads-prd.s3.us-west-2.amazonaws.com
+
+# STUN/TURN Серверы (Критично для голосовой связи и стримов)
+stun.discord.media
+*.stun.discord.media
+stun.l.google.com
+stun1.l.google.com
+stun2.l.google.com
+stun3.l.google.com
+stun4.l.google.com
+global.stun.twilio.com
+turn.twilio.com
+stun.sipgate.net
 
 # Telegram
 telegram.org
@@ -383,5 +446,85 @@ alibabacloud.com
 tencent.com
 *.tencent.com
 *.myqcloud.com
-
 *.cloud.tencent.com
+
+# ChatGPT и OpenAI
+openai.com
+*.openai.com
+chatgpt.com
+*.chatgpt.com
+oaistatic.com
+*.oaistatic.com
+oaiusercontent.com
+*.oaiusercontent.com
+azureedge.net
+*.azureedge.net
+
+# Anthropic / Claude AI
+anthropic.com
+*.anthropic.com
+claude.ai
+*.claude.ai
+
+# Прочие AI (Perplexity, Mistral, Grok)
+perplexity.ai
+*.perplexity.ai
+mistral.ai
+*.mistral.ai
+x.ai
+*.x.ai
+
+# Дополнительно для Xbox и Microsoft Store (фикс загрузки игр)
+xbox.com
+*.xbox.com
+xboxlive.com
+*.xboxlive.com
+microsoft.com
+*.microsoft.com
+msedge.net
+*.msedge.net
+delivery.mp.microsoft.com
+*.delivery.mp.microsoft.com
+
+
+# Разработка и IT (Docker, NPM, PyPI, Terraform)
+docker.com
+*.docker.com
+docker.io
+*.docker.io
+pypi.org
+*.pypi.org
+pythonhosted.org
+*.pythonhosted.org
+npmjs.com
+*.npmjs.com
+terraform.io
+*.terraform.io
+hashicorp.com
+*.hashicorp.com
+rust-lang.org
+*.rust-lang.org
+
+# Библиотеки и CDN (фикс "вечной загрузки" сайтов)
+jsdelivr.net
+*.jsdelivr.net
+cdnjs.com
+*.cdnjs.com
+unpkg.com
+*.unpkg.com
+fonts.googleapis.com
+fonts.gstatic.com
+
+# Дополнительные домены для Discord (фикс стримов и RTC)
+dis.gd
+*.dis.gd
+discord.co
+*.discord.co
+discord.design
+*.discord.design
+discord.dev
+*.discord.dev
+discord.style
+*.discord.style
+discordapp.io
+*.discordapp.io
