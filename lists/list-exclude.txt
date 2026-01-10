@@ -1,3 +1,4 @@
+login.xsolla.com
 banki.ru
 pusher.com
 live-video.net
