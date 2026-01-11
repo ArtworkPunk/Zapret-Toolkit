@@ -86,3 +86,6 @@ origin.com
 *.akamaihd.net
 *.akamaized.net
 *.eaassets-*.akamaihd.net
+
+www.arenabreakoutinfinite.com
+arenabreakoutinfinite.com
