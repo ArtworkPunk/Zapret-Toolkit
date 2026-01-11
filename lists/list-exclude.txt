@@ -87,5 +87,26 @@ origin.com
 *.akamaized.net
 *.eaassets-*.akamaihd.net
 
-www.arenabreakoutinfinite.com
+# Arena Breakout Infinite
 arenabreakoutinfinite.com
+*.arenabreakoutinfinite.com
+ab-infinite.com
+*.ab-infinite.com
+
+# Level Infinite & Tencent (Авторизация и Лаунчер)
+levelinfinite.com
+*.levelinfinite.com
+intlgame.com
+*.intlgame.com
+li-game.com
+*.li-game.com
+igamecj.com
+*.igamecj.com
+tencent.com
+*.tencent.com
+
+# CDN и Обновления (Tencent Cloud)
+*.cloud.tencent.com
+*.qq.com
+*.gtimg.com
+
