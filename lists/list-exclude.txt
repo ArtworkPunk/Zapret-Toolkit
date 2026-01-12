@@ -87,13 +87,11 @@ origin.com
 *.akamaized.net
 *.eaassets-*.akamaihd.net
 
-# Arena Breakout Infinite
+# Arena Breakout Infinite & Tencent Global
 arenabreakoutinfinite.com
 *.arenabreakoutinfinite.com
 ab-infinite.com
 *.ab-infinite.com
-
-# Level Infinite & Tencent (Авторизация и Лаунчер)
 levelinfinite.com
 *.levelinfinite.com
 intlgame.com
@@ -102,11 +100,36 @@ li-game.com
 *.li-game.com
 igamecj.com
 *.igamecj.com
+infinitelobby.com
+*.infinitelobby.com
+
+# Tencent Infrastructure (CDN & Auth) - Критично для загрузки
 tencent.com
 *.tencent.com
-
-# CDN и Обновления (Tencent Cloud)
-*.cloud.tencent.com
-*.qq.com
+gtimg.com
 *.gtimg.com
+gtimg.cn
+*.gtimg.cn
+qq.com
+*.qq.com
+tencent-cloud.net
+*.tencent-cloud.net
+cloud.tencent.com
+*.cloud.tencent.com
+levelinfinite.gtimg.com
 
+# Anti-Cheat (ACE)
+anti-cheat-expert.com
+*.anti-cheat-expert.com
+ace-client.com
+*.ace-client.com
+
+# Мировые CDN (Tencent часто арендует их для инсталлеров)
+akamaihd.net
+*.akamaihd.net
+akamaized.net
+*.akamaized.net
+edgekey.net
+*.edgekey.net
+cloudfront.net
+*.cloudfront.net
