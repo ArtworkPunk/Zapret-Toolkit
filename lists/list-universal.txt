@@ -112,10 +112,14 @@ makersuite.google.com
 *.makersuite.google.com
 
 # Discord Media сервера (стримы, видео, голос)
+*.discord.media
 *.discordapp.net
+*.discord.com
 *.discord.co
+*.discord.gg
 *.discord.gift
 *.discord.activities
+*.discordapp.com
 *.discordstatus.com
 edge-voice.discord.media
 *.edge-voice.discord.media
@@ -123,29 +127,6 @@ edge-voice.discord.media
 *.media.discordapp.net
 *.cdn.discordapp.com
 *.voice.discord.media
-discord.gg
-*.discord.gg
-discord.media
-*.discord.media
-discordapp.com
-*.discordapp.com
-discordapp.net
-*.discordapp.net
-discord.gift
-*.discord.gift
-discord.activities
-*.discord.activities
-discordstatus.com
-*.discordstatus.com
-discord.co
-*.discord.co
-dis.gd
-*.dis.gd
-media.discordapp.net
-cdn.discordapp.com
-dl.discordapp.net
-status.discord.com
-sentry.discord.com
 
 
 # Контент и обновления (EU CDN)

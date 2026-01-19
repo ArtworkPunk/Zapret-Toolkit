@@ -68,8 +68,6 @@ aliprice.com
 www.aliprice.com
 rshb.ru
 
-
-# Apex Legends
 ea.com
 *.ea.com
 origin.com
@@ -85,3 +83,6 @@ origin.com
 *.accounts.ea.com
 *.content.ea.com
 *.blob.core.windows.net
+*.akamaihd.net
+*.akamaized.net
+*.eaassets-*.akamaihd.net
