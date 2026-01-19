@@ -86,3 +86,24 @@ origin.com
 *.akamaihd.net
 *.akamaized.net
 *.eaassets-*.akamaihd.net
+
+
+# Cloudflare Server
+signin.aws.amazon.com
+s3.amazonaws.com
+awsstatic.com
+console.aws.a2z.com
+amazonaws.com
+awsapps.com
+sso.amazonaws.com
+deadbydaylight.com
+signin.aws.amazon.com
+s3.amazonaws.com
+awsstatic.com
+console.aws.a2z.com
+amazonaws.com
+awsapps.com
+sso.amazonaws.com
+argotunnel.com
+cfargotunnel.com
+
