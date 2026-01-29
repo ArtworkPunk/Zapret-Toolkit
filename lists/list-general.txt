@@ -112,4 +112,31 @@ verisign.com
 *.verisign.com
 
 
-
+# HDrezka
+rezka.fi
+kinopub.me
+rezka.ag
+hdrezka.ag
+hdrezka.me
+hdrezka.kim
+hdrezka.tv
+hdrezka.co
+hdrezka.club
+hdrezka.ink
+hdrezka.buzz
+hdrezka.loan
+hdrezka.rest
+hdrezka.center
+hdrezka.city
+hdrezka.fyi
+hdrezka.run
+hdrezka.lol
+hdrezka.today
+hdrezka.win
+hdrezka.tips
+hdrezka.vip
+hdrezka.gift
+hdrezka.link
+hdrezka.solutions
+rezka-ua.tv
+hello-rezka.tv

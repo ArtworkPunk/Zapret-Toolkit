@@ -20,13 +20,13 @@ set "LISTS=%~dp0lists\"
 cd /d %BIN%
 
 
-start "YT_DS_ONLY_MAX" /min "%BIN%winws.exe" --wf-tcp=443,2053,2083,2087,2096,8443 --wf-udp=443,19294-19344,50000-65535 ^
---filter-tcp=443 --hostlist="%LISTS%list-discordyoutube.txt" --ip-id=zero --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts --dpi-desync-fake-tls="%BIN%tls_clienthello_max_ru.bin" --new ^
---filter-udp=443 --hostlist="%LISTS%list-discordyoutube.txt" --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
---filter-tcp=2053,2083,2087,2096,8443 --hostlist-domains=discord.media --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts --dpi-desync-fake-tls="%BIN%tls_clienthello_max_ru.bin" --dpi-desync-fake-tls-mod=none --new ^
---filter-udp=19294-19344,50000-65535 --ipset="%LISTS%ipset-discord.txt" --dpi-desync=fake --dpi-desync-repeats=1 --dpi-desync-cutoff=n1 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
+
+start "YT_DS_ULTIMATE_LITE" /min "%BIN%winws.exe" --wf-tcp=80,443,2053,2083,2087,2096,8443 --wf-udp=443,19294-19344,50000-65535 ^
+--filter-tcp=80,443 --hostlist="%LISTS%list-discordyoutube.txt" --hostlist-exclude="%LISTS%list-exclude.txt" --ip-id=zero --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts --dpi-desync-fake-tls="%BIN%tls_clienthello_max_ru.bin" --dpi-desync-fake-tls-mod=none --new ^
+--filter-udp=443 --hostlist="%LISTS%list-discordyoutube.txt" --hostlist-exclude="%LISTS%list-exclude.txt" --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
+--filter-tcp=2053,2083,2087,2096,8443 --hostlist-domains=discord.media --hostlist-exclude="%LISTS%list-exclude.txt" --dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts --dpi-desync-fake-tls="%BIN%tls_clienthello_max_ru.bin" --dpi-desync-fake-tls-mod=none --new ^
+--filter-udp=19294-19344,50000-65535 --ipset="%LISTS%ipset-discord.txt" --ipset-exclude="%LISTS%ipset-exclude.txt" --dpi-desync=fake --dpi-desync-repeats=1 --dpi-desync-cutoff=n1 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
 --filter-udp=19294-19344,50000-65535 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=1 --dpi-desync-cutoff=n1
 
 echo.
-
 pause >nul

@@ -107,3 +107,16 @@ sso.amazonaws.com
 argotunnel.com
 cfargotunnel.com
 
+www.mumuplayer.com
+mumuplayer.com
+api.mumuplayer.com
+*.mumuplayer.com
+
+arenabreakoutinfinite.com
+*.arenabreakoutinfinite.com
+intlgame.com
+*.intlgame.com
+levelinfinite.com
+*.levelinfinite.com
+gtimg.com
+*.gtimg.com
