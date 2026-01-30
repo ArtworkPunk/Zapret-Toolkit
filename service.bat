@@ -834,5 +834,4 @@ exit /b
 
 :PrintRes
 if "%2"=="1" ( echo  %c_grn%[+] %~1%c_rst% ) else if "%2"=="2" ( echo  %c_yel%[?] %~1%c_rst% ) else ( echo  %c_red%[X] %~1%c_rst% )
-
 exit /b

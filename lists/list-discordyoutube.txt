@@ -48,3 +48,8 @@ dl.discordapp.net
 images.discordapp.net
 discord-preview.com
 sentry.discord.com
+
+discord-attachments-uploads-prd.s3.us-west-2.amazonaws.com
+*.s3.us-west-2.amazonaws.com
+discordapp.com
+*.discordapp.com
