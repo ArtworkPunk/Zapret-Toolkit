@@ -7,9 +7,10 @@ cd /d "%~dp0"
 
 :: --- CONFIGURATION ---
 set "APP_TITLE=ZAPRET TOOLKIT"
-set "LOCAL_VERSION=1.1.1 (ArtworkPunk Edition)"
+set "LOCAL_VERSION=1.1.2 (ArtworkPunk Edition)"
 set "REPO_URL=https://github.com/ArtworkPunk/Zapret-Toolkit"
 set "CHECKER_URL=https://hyperion-cs.github.io/dpi-checkers/ru/tcp-16-20/"
+set "HOSTS_FILE=%WINDIR%\System32\drivers\etc\hosts"
 
 :: --- ANSI COLORS ---
 for /F %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
@@ -109,10 +110,12 @@ echo  %c_gry%  5.%c_rst% %c_wht%GAME FILTER%c_rst%         %c_gry%:: Toggle UDP 
 echo  %c_gry%  6.%c_rst% %c_wht%IP FILTER%c_rst%           %c_gry%:: Toggle IP blacklist%c_rst%
 echo  %c_gry%  7.%c_rst% %c_wht%SET DNS%c_rst%             %c_gry%:: Cloudflare/Google + Flush%c_rst%
 echo  %c_gry%  8.%c_rst% %c_wht%GLOBAL CHECK%c_rst%        %c_gry%:: Test DPI connectivity%c_rst%
+echo  %c_gry%  9.%c_rst% %c_yel%MANUAL ADD%c_rst%          %c_gry%:: Force IP-Bypass via HOSTS%c_rst%
+echo  %c_gry% 10.%c_rst% %c_yel%DELETE MANUAL%c_rst%       %c_gry%:: Remove custom IP entries%c_rst%
 echo.
 echo  %c_cyan%[ SYSTEM ]%c_rst%
-echo  %c_gry%  9.%c_rst% %c_wht%UPDATE LISTS%c_rst%        %c_gry%:: Sync from GitHub%c_rst%
-echo  %c_gry% 10.%c_rst% %c_wht%CHECK UPDATES%c_rst%       %c_gry%:: Update Toolkit%c_rst%
+echo  %c_gry% 11.%c_rst% %c_wht%UPDATE LISTS%c_rst%        %c_gry%:: Sync from GitHub%c_rst%
+echo  %c_gry% 12.%c_rst% %c_wht%CHECK UPDATES%c_rst%       %c_gry%:: Update Toolkit%c_rst%
 echo.
 echo  %c_gry%  0.%c_rst% %c_red%EXIT%c_rst%
 echo.
@@ -128,11 +131,161 @@ if "%menu_choice%"=="5" goto game_switch
 if "%menu_choice%"=="6" goto ipset_switch
 if "%menu_choice%"=="7" goto dns_menu
 if "%menu_choice%"=="8" goto global_check
-if "%menu_choice%"=="9" goto update_lists_manual
-if "%menu_choice%"=="10" goto service_check_updates
+if "%menu_choice%"=="9" goto manual_add
+if "%menu_choice%"=="10" goto manual_delete
+if "%menu_choice%"=="11" goto update_lists_manual
+if "%menu_choice%"=="12" goto service_check_updates
 if "%menu_choice%"=="0" exit /b
 
 goto menu
+
+:: ============================================================================
+:: DEBUG MANUAL ADD (IP-LEVEL BYPASS)
+:: ============================================================================
+:manual_add
+cls
+echo.
+echo [DEBUG] Вход в режим MANUAL ADD...
+echo.
+set "user_domain="
+set /p "user_domain=Enter domain (e.g. instagram.com): "
+
+if not defined user_domain (
+    echo [DEBUG] Домен не введён. Возврат в меню.
+    pause
+    goto menu
+)
+
+echo [DEBUG] Введен домен: "!user_domain!"
+echo [DEBUG] Запускаю пинг во временный файл...
+
+:: Пробуем пингануть и сохранить результат
+ping -n 1 -4 !user_domain! > "%TEMP%\toolkit_ping.txt" 2>&1
+
+if %errorlevel% neq 0 (
+    echo [DEBUG] Команда PING вернула ошибку %errorlevel%
+)
+
+if not exist "%TEMP%\toolkit_ping.txt" (
+    echo [DEBUG] КРИТИЧЕСКАЯ ОШИБКА: Файл %TEMP%\toolkit_ping.txt не был создан!
+    pause
+    goto menu
+)
+
+echo [DEBUG] Содержимое файла ping:
+echo --------------------------------------------------
+type "%TEMP%\toolkit_ping.txt"
+echo --------------------------------------------------
+
+set "found_ip="
+:: Поиск IP в квадратных скобках [ ]
+for /f "tokens=2 delims=[]" %%a in ('findstr "\[" "%TEMP%\TEMP\toolkit_ping.txt" 2^>nul') do (
+    set "found_ip=%%a"
+)
+
+:: Если не нашли в скобках, пробуем найти после слова "с" или "from" (зависит от языка системы)
+if "!found_ip!"=="" (
+    echo [DEBUG] IP в скобках не найден. Пробую запасной поиск...
+    for /f "tokens=3 delims=: " %%a in ('findstr /i "Reply от from" "%TEMP%\toolkit_ping.txt" 2^>nul') do (
+        set "found_ip=%%a"
+    )
+)
+
+echo [DEBUG] Результат поиска IP: "!found_ip!"
+
+if "!found_ip!"=="" (
+    echo [DEBUG] ОШИБКА: IP не удалось извлечь из текста.
+    echo Возможно, домен не резолвится вашим DNS.
+    pause
+    goto menu
+)
+
+echo [DEBUG] Попытка записи в HOSTS...
+echo [DEBUG] Путь к hosts: "%HOSTS_FILE%"
+
+:: Проверяем, есть ли вообще доступ к файлу на чтение/запись
+if not exist "%HOSTS_FILE%" (
+    echo [DEBUG] ОШИБКА: Файл hosts не найден по пути %HOSTS_FILE%
+    pause
+    goto menu
+)
+
+:: Удаляем старые записи этого домена перед добавлением (защита от дублей)
+findstr /V /I /C:"!user_domain!" "%HOSTS_FILE%" > "%TEMP%\hosts_debug_tmp.txt"
+copy /Y "%TEMP%\hosts_debug_tmp.txt" "%HOSTS_FILE%" >nul
+if %errorlevel% neq 0 (
+    echo [DEBUG] ОШИБКА: Не удалось очистить старые записи (Permission Denied?)
+)
+
+:: Записываем
+echo !found_ip! !user_domain! # ZAPRET-TOOLKIT >> "%HOSTS_FILE%"
+echo !found_ip! www.!user_domain! # ZAPRET-TOOLKIT >> "%HOSTS_FILE%"
+
+if %errorlevel% equ 0 (
+    echo [DEBUG] УСПЕХ: Записи добавлены в hosts.
+) else (
+    echo [DEBUG] ОШИБКА записи в файл hosts. Код ошибки: %errorlevel%
+)
+
+echo.
+echo [DEBUG] Завершение операции.
+del "%TEMP%\toolkit_ping.txt" >nul 2>&1
+del "%TEMP%\hosts_debug_tmp.txt" >nul 2>&1
+pause
+goto menu
+
+:: ============================================================================
+:: DELETE MANUAL ENTRIES
+:: ============================================================================
+:manual_delete
+cls
+echo.
+echo  %c_cyan%:: DELETE MANUAL ENTRIES%c_rst%
+echo  %c_gry%--------------------------------------------------%c_rst%
+echo  List of domains added by Zapret-Toolkit:
+echo.
+
+set "count=0"
+for /f "tokens=1,2 delims= " %%a in ('findstr "ZAPRET-TOOLKIT" "%HOSTS_FILE%"') do (
+    :: Фильтруем дубли www.
+    set "check_www=%%b"
+    if "!check_www:~0,4!" neq "www." (
+        set /a count+=1
+        set "host_!count!=%%b"
+        echo  !count! - %%b
+    )
+)
+
+if !count! EQU 0 (
+    echo  %c_gry%No custom entries found in hosts file.%c_rst%
+    pause
+    goto menu
+)
+
+echo.
+echo  Enter the ID number to delete, or 0 to return.
+set "del_id="
+set /p "del_id=INPUT ID > "
+if "!del_id!"=="0" goto menu
+if "!del_id!"=="" goto menu
+
+set "target_to_del=!host_%del_id%!"
+if not defined target_to_del (
+    echo  %c_red%Invalid ID.%c_rst%
+    pause
+    goto manual_delete
+)
+
+echo.
+echo  %c_yel%Removing !target_to_del!...%c_rst%
+
+type "%HOSTS_FILE%" | findstr /V /I /C:"!target_to_del!" > "%TEMP%\hosts_new.txt"
+copy /Y "%TEMP%\hosts_new.txt" "%HOSTS_FILE%" >nul
+del "%TEMP%\hosts_new.txt"
+
+echo  %c_grn%[OK] !target_to_del! removed successfully.%c_rst%
+pause
+goto manual_delete
 
 :: ============================================================================
 :: INSTALL
@@ -296,7 +449,7 @@ pause
 goto menu
 
 :: ============================================================================
-:: STATUS (CRASH FIXED - NO BLOCKS)
+:: STATUS (KEEP ALL DETAILS)
 :: ============================================================================
 :service_status
 cls
@@ -423,9 +576,9 @@ if "!w_run!" neq "0" (
 goto :diag_ok
 
 :diag_cleanup
-echo  %c_yel%[!] Orphaned WinDivert found. Cleaning...%c_rst%
-net stop "WinDivert" >nul 2>&1
-sc delete "WinDivert" >nul 2>&1
+        echo  %c_yel%[!] Orphaned WinDivert found. Cleaning...%c_rst%
+        net stop "WinDivert" >nul 2>&1
+        sc delete "WinDivert" >nul 2>&1
 
 set "conflicts=GoodbyeDPI discordfix_zapret"
 for %%s in (!conflicts!) do (
@@ -494,7 +647,7 @@ timeout /t 1 >nul
 goto menu
 
 :: ============================================================================
-:: IP FILTER (CRASH FIXED - NO NESTED BLOCKS)
+:: IP FILTER
 :: ============================================================================
 :ipset_calc_status
 set "listFile=%~dp0lists\ipset-all.txt"
@@ -659,6 +812,17 @@ goto menu
 :: ============================================================================
 :: HELPERS
 :: ============================================================================
+:test_service
+set "SrvName=%~1"
+set "SrvState="
+for /f "tokens=3 delims=: " %%A in ('sc query "%SrvName%" 2^>nul ^| findstr /i "STATE"') do set "SrvState=%%A"
+if "%SrvState%"=="RUNNING" (
+    if "%~2"=="soft" ( echo  %c_yel%Already running.%c_rst% ) else ( echo  %c_grn%[+] Service "%SrvName%" is RUNNING%c_rst% )
+) else (
+    if not "%~2"=="soft" echo  %c_gry%[-] Service "%SrvName%" is NOT running%c_rst%
+)
+exit /b
+
 :tcp_enable
 netsh interface tcp show global | findstr /i "timestamps" | findstr /i "enabled" > nul || netsh interface tcp set global timestamps=enabled > nul 2>&1
 exit /b
