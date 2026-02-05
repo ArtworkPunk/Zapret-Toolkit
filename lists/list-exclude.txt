@@ -68,6 +68,7 @@ aliprice.com
 www.aliprice.com
 rshb.ru
 
+# Apex Legends
 ea.com
 *.ea.com
 origin.com
@@ -112,6 +113,7 @@ mumuplayer.com
 api.mumuplayer.com
 *.mumuplayer.com
 
+# Arena Breakout
 arenabreakoutinfinite.com
 *.arenabreakoutinfinite.com
 intlgame.com
@@ -120,3 +122,56 @@ levelinfinite.com
 *.levelinfinite.com
 gtimg.com
 *.gtimg.com
+
+
+# Delta Force 
+df.qq.com
+*.df.qq.com
+intlgame.com
+*.intlgame.com
+li-game.com
+*.li-game.com
+igamecj.com
+*.igamecj.com
+infinitelobby.com
+*.infinitelobby.com
+wechat.com
+*.wechat.com
+weixin.com
+*.weixin.com
+weixin.qq.com
+*.weixin.qq.com
+tencent.com
+*.tencent.com
+# WeChat Authentication
+szsupport.weixin.qq.com
+short.weixin.qq.com
+long.weixin.qq.com
+mars.weixin.qq.com
+ext.weixin.qq.com
+mp.weixin.qq.com
+# Tencent Login
+security.qq.com
+captcha.guard.qcloud.com
+graph.qq.com
+open.weixin.qq.com
+# Delta Force
+df.qq.com
+*.df.qq.com
+game.qq.com
+*.game.qq.com
+tencent.com
+*.tencent.com
+intlgame.com
+*.intlgame.com
+li-game.com
+*.li-game.com
+igamecj.com
+*.igamecj.com
+infinitelobby.com
+*.infinitelobby.com
+# Anti-Cheat ACE
+anti-cheat-expert.com
+*.anti-cheat-expert.com
+ace-client.com
+*.ace-client.com
