@@ -175,3 +175,27 @@ anti-cheat-expert.com
 *.anti-cheat-expert.com
 ace-client.com
 *.ace-client.com
+
+# Battle.net & Blizzard Content Delivery (Fix 5% download hang)
+blizzard.com
+*.blizzard.com
+battle.net
+*.battle.net
+blzstatic.com
+*.blzstatic.com
+blizzardgames.com
+*.blizzardgames.com
+# Сервера обновлений и патчей
+dist.blizzard.com
+level3.blizzard.com
+edge.blizzard.com
+nydus.battle.net
+# CDN сторонних провайдеров, которые юзает Blizzard
+akamaized.net
+*.akamaized.net
+akamaihd.net
+*.akamaihd.net
+edgecastcdn.net
+*.edgecastcdn.net
+llnwd.net
+*.llnwd.net

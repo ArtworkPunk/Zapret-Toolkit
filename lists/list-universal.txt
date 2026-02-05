@@ -401,3 +401,17 @@ hdrezka.solutions
 rezka-ua.tv
 hello-rezka.tv
 
+
+# Blizzard Auth & Shop UI
+eu.patch.battle.net
+us.patch.battle.net
+kr.patch.battle.net
+client-event-broker.battle.net
+# Голосовой чат Overwatch 2 (Vivox)
+vivox.com
+*.vivox.com
+vivox.net
+*.vivox.net
+# Реклама и новости в лаунчере
+blz-contentstack.com
+*.blz-contentstack.com
