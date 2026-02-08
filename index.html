@@ -3,49 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 🔥 ЗАГОЛОВОК -->
-    <title>⚡ ZAPRET TOOLKIT / Твой выбор!</title>
-    
-    <!-- Описание для Google и Yandex (Тут самые важные ключевые слова) -->
-    <meta name="description" content="Не работает Discord? Тормозит YouTube? Скачай ZAPRET TOOLKIT бесплатно. Лучший способ обойти замедление и блокировки DPI. Без VPN, без потери скорости, Ping 0. Работает на Windows 10/11.">
-    
-    <!-- Ключевые слова (теги) -->
-    <meta name="keywords" content="zapret, discord fix, youtube fix, обход блокировок, dpi bypass, goodbyedpi, разблокировать дискорд, ускорение ютуб, zapret toolkit, антизапрет">
 
-    <!-- ⚡ ИКОНКА САЙТА (Favicon) -->
-    <link rel="icon" type="image/png" href="bin/white.png">
+    <title>⚡ ZAPRET TOOLKIT | Верни Свободный Интернет</title>
+    <meta name="description" content="Мощный инструмент для оптимизации и шифровании сети. Разблокируй Discord, YouTube, Steam, EpicGames, BattleNet. Не VPN. Без потери скорости.">
+    <meta name="keywords" content="zapret, discord fix, youtube fix, обход блокировок, dpi bypass, goodbyedpi, разблокировать дискорд, ускорение ютуб, zapret toolkit, антизапрет">
     
-    <!-- Красивое превью для Telegram, VK и Discord (Open Graph) -->
-    <meta property="og:title" content="⚡ ZAPRET TOOLKIT - Верни Свободный Интернет">
-    <meta property="og:description" content="Ультимативное решение для обхода DPI. Разблокируй Discord, YouTube и Steam в один клик. Не VPN! Пинг не растет.">
-    <meta property="og:image" content="https://repository-images.githubusercontent.com/YOUR_REPO_ID/preview.jpg"> 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://artworkpunk.github.io/Zapret-Toolkit/">
+    <link rel="icon" type="image/png" href="bin/white.png">
     
-    <!-- Стили Tailwind CSS -->
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Иконки FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Анимации AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Настройка темы -->
+    <!-- Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6', // Синий
-                        secondary: '#8b5cf6', // Фиолетовый
-                        dark: '#0f172a',
-                        darker: '#020617',
-                        accent: '#10b981' // Зеленый
+                        brand: {
+                            bg: '#0f172a',      /* Slate 900 */
+                            card: 'rgba(30, 41, 59, 0.5)', 
+                            primary: '#6366f1', /* Indigo */
+                            accent: '#8b5cf6',  /* Violet */
+                            cyan: '#06b6d4',    /* Cyan */
+                            text: '#f1f5f9'
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.2)' },
+                            '50%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.5)' },
+                        }
                     }
                 }
             }
@@ -53,329 +61,531 @@
     </script>
     
     <style>
-        /* Кастомный скроллбар */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
-        
-        .hero-bg {
-            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+
+        /* --- HUD PATTERNS START --- */
+
+        /* Общий стиль для всех фонов */
+        .hud-bg {
+            position: absolute;
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1; 
         }
-        
-        .glow-btn {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+
+        /* 1. ПАТТЕРН: КРЕСТИКИ (Hero) */
+        .pattern-cross {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10v20M10 20h20' stroke='%236366f1' stroke-width='1.5' fill='none' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 25px 25px;
+            animation: move-cross 4s linear infinite;
+            opacity: 50%;
+        }
+
+        /* 2. ПАТТЕРН: СЕТКА (Features) */
+        .pattern-grid {
+            background-image: 
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: move-grid 10s linear infinite;
+        }
+
+        /* 3. ПАТТЕРН: ТОЧКИ (Tech) */
+        .pattern-dots {
+            background-image: radial-gradient(#06b6d4 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            animation: move-dots 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        /* 4. ПАТТЕРН: ДИАГОНАЛИ (Install) */
+        .pattern-lines {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(16, 185, 129, 0.05) 10px,
+                rgba(16, 185, 129, 0.05) 11px
+            );
+            animation: move-lines 5s linear infinite;
+        }
+
+        .content-layer {
+        position: relative;
+        z-index: 10; /* Контент всегда сверху */
+        }
+
+        /* Анимации движения */
+        @keyframes move-cross { 0% { background-position: 0 0; } 100% { background-position: 25px 25px; } }
+        @keyframes move-grid { 0% { background-position: 0 0; } 100% { background-position: 0 40px; } }
+        @keyframes move-dots { 0% { background-position: 0 0; } 100% { background-position: -30px 30px; } }
+        @keyframes move-lines { 0% { background-position: 0 0; } 100% { background-position: 73px 0; } }
+
+        /* --- HUD PATTERNS END --- */
+
+        /* --- NEW STYLES START --- */
+
+        /* Анимация потока данных в линии */
+        .pipeline-flow {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #6366f1, #d946ef, transparent);
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        /* Горизонтальная линия (Desktop) */
+        .flow-h {
+            top: 50%; left: 0; width: 100%; height: 2px;
+            transform: translateY(-50%);
+            animation: flow-x 2s linear infinite;
+        }
+
+        /* Вертикальная линия (Mobile) */
+        .flow-v {
+            top: 0; left: 50%; width: 2px; height: 100%;
+            transform: translateX(-50%);
+            animation: flow-y 2s linear infinite;
+        }
+
+        @keyframes flow-x { 0% { left: -100%; } 100% { left: 100%; } }
+        @keyframes flow-y { 0% { top: -100%; } 100% { top: 100%; } }
+
+        /* Свечение иконки */
+        .icon-glow {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
             transition: all 0.3s ease;
         }
-        .glow-btn:hover {
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
-            transform: translateY(-2px);
+        .feature-card:hover .icon-glow {
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+            transform: scale(1.1);
         }
+
+        /* --- NEW STYLES END --- */
+
+        body {
+            /* Тот самый градиентный фон Indigo/Violet */
+            background: radial-gradient(circle at top center, #1e1b4b 0%, #0f172a 40%, #020617 100%);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.5);
+            background: rgba(30, 41, 59, 0.6);
+        }
+
+        /* Marquee Strip */
+        .marquee-strip {
+        width: 100%;
+        overflow: hidden; 
+        background: linear-gradient(90deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        position: relative;
+        z-index: 20;
+        display: flex; 
+        }
+
+        .marquee-track {
+            display: flex;
+            white-space: nowrap;
+            /* Двигаем блок, в котором лежат две копии текста */
+            animation: scroll-left 40s linear infinite;
+            width: max-content; /* Ширина по содержимому */
+            will-change: transform; /* Оптимизация для плавности */
+        }
+
+
+        .marquee-track.reverse {
+            animation: scroll-right 40s linear infinite;
+        }
+
+        .marquee-item {
+            font-size: 20px; /* Размер шрифта */
+            font-weight: 900;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.15); /* Прозрачность */
+            padding: 1rem 0;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+            flex-shrink: 0; /* Запрещаем сжиматься */
+        }
+
+        /* Terminal Window */
+        .terminal-window {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+        .terminal-line {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-darker text-gray-200 font-sans antialiased overflow-x-hidden">
+<body class="antialiased">
 
-    <!-- Навигация -->
-    <nav class="fixed w-full z-50 bg-darker/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-primary text-2xl"></i>
-                    <span class="font-bold text-xl tracking-wider text-white">ZAPRET <span class="text-primary">TOOLKIT</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#features" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Возможности</a>
-                        <a href="#games" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Поддержка</a>
-                        <a href="#install" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">Установка</a>
-                        <a href="#faq" class="hover:text-primary transition px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-                    </div>
-                </div>
-                <a href="https://github.com/ArtworkPunk/Zapret-Toolkit" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm transition flex items-center gap-2 border border-gray-700">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 glass-card border-x-0 border-t-0 rounded-none h-16">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-black tracking-tight">
+                <i class="fa-solid fa-bolt text-brand-primary animate-pulse"></i>
+                <span>ZAPRET <span class="text-brand-primary">TOOLKIT</span></span>
             </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#features" class="hover:text-white transition">Возможности</a>
+                <a href="#tech" class="hover:text-white transition">Технология</a>
+                <a href="#install" class="hover:text-white transition">Установка</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            </div>
+
+            <a href="https://github.com/ArtworkPunk/Zapret-Toolkit" target="_blank" class="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition font-bold text-xs flex items-center gap-2 border border-white/10">
+                <i class="fa-brands fa-github text-lg"></i> GitHub
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 hero-bg overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            
-            <div data-aos="fade-down" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm mb-6">
-                <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Версия для Windows 10/11
+    <section class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
+        <div class="hud-bg pattern-dots"></div>
+        <!-- Glow Effect -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/20 blur-[120px] rounded-full -z-10 animate-float"></div>
+
+        <div class="hud-bg pattern-cross"></div>
+        <div class="max-w-5xl mx-auto z-10 relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold mb-8 uppercase tracking-wider" data-aos="fade-down">
+                <i class="fa-brands fa-windows"></i> Версия для Windows 10/11
             </div>
 
-            <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight" data-aos="fade-up">
                 Верни себе <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Свободный Интернет</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Свободный Интернет</span>
             </h1>
             
-            <p data-aos="fade-up" data-aos-delay="100" class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                Мощный инструмент для обхода DPI блокировок. Разблокируй Discord, YouTube, Steam и тысячи других сервисов в один клик.
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Мощный инструмент для обхода DPI блокировок. <br>
+                Разблокируй Discord, YouTube, Steam, EpicGames, BattleNet и тысячи других сервисов в один клик.
             </p>
             
-            <div data-aos="fade-up" data-aos-delay="200" class="mt-10 flex justify-center gap-4 flex-col sm:flex-row">
-                <a href="https://github.com/ArtworkPunk/Zapret-Toolkit/releases/download/1.2.1/ZAPRET1.2.1.zip" class="glow-btn bg-primary hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 text-lg">
-                    <i class="fa-brands fa-windows text-2xl"></i>
-                    Скачать Toolkit
+            <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/ArtworkPunk/Zapret-Toolkit/releases/download/1.2.1/ZAPRET1.2.1.zip" class="px-8 py-4 bg-brand-primary hover:bg-indigo-500 rounded-xl text-white font-bold text-lg shadow-lg shadow-indigo-500/30 transition transform hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-download"></i> Скачать Toolkit
                 </a>
-                <a href="#how-it-works" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition">
-                    <i class="fa-solid fa-circle-play"></i>
-                    Как это работает?
+                <a href="#tech" class="px-8 py-4 glass-card rounded-xl text-white font-bold text-lg hover:bg-white/5 transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-microchip"></i> Как это работает?
                 </a>
-            </div>
-
-            <div class="mt-12 flex justify-center gap-6 opacity-70 grayscale hover:grayscale-0 transition duration-500">
-                <i class="fa-brands fa-discord text-4xl"></i>
-                <i class="fa-brands fa-youtube text-4xl"></i>
-                <i class="fa-brands fa-steam text-4xl"></i>
-                <i class="fa-brands fa-spotify text-4xl"></i>
             </div>
         </div>
-        
-        <!-- Декоративные пятна -->
-        <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
     </section>
 
-    <!-- Преимущества -->
-    <section id="features" class="py-24 bg-darker relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-white">Почему Zapret Toolkit?</h2>
-                <p data-aos="fade-up" data-aos-delay="100" class="mt-4 text-gray-400">В отличие от VPN, мы не замедляем скорость и не требуем подписки.</p>
+    <!-- BANNER 1 -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <!-- КОПИЯ 1 -->
+            <span class="marquee-item">
+                // ZAPRET TOOLKIT // YOUTUBE // DISCORD // GAMES // STREAMING // LIVE // PRIVATE // ZAPRET TOOLKIT // YOUTUBE // DISCORD // GAMES // STREAMING // LIVE // PRIVATE // &nbsp;
+            </span>
+            <!-- КОПИЯ 2 (Точно такая же) -->
+            <span class="marquee-item">
+                // ZAPRET TOOLKIT // YOUTUBE // DISCORD // GAMES // STREAMING // LIVE // PRIVATE // ZAPRET TOOLKIT // YOUTUBE // DISCORD // GAMES // STREAMING // LIVE // PRIVATE // &nbsp;
+            </span>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section id="features" class="py-24 px-6 relative">
+        <div class="hud-bg pattern-grid"></div>
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Почему <span class="text-brand-primary">Zapret Toolkit?</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Мы не VPN. Мы не продаем ваши данные. Вся магия происходит локально на вашем ПК.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition duration-300 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition">
-                        <i class="fa-solid fa-microchip text-2xl text-primary"></i>
+                <div class="glass-card p-8 rounded-2xl group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-6 text-brand-primary group-hover:scale-110 transition">
+                        <i class="fa-solid fa-server text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">DPI Фильтрация</h3>
-                    <p class="text-gray-400">Интеллектуальная десинхронизация пакетов и TLS/QUIC маскировка. Обходит даже глубокий анализ трафика провайдером.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Local Only</h3>
+                    <p class="text-gray-400 text-sm">Программа работает как драйвер. Ваши пароли и файлы остаются при вас.</p>
                 </div>
 
                 <!-- Card 2 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition duration-300 group">
-                    <div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition">
-                        <i class="fa-solid fa-gamepad text-2xl text-accent"></i>
+                <div class="glass-card p-8 rounded-2xl group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center mb-6 text-brand-accent group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Гейминг без лагов</h3>
-                    <p class="text-gray-400">Нулевая задержка. Поддержка Discord, Fortnite, CS2, Roblox и других игр. Минимальное потребление ресурсов (50 МБ ОЗУ).</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Zero Ping</h3>
+                    <p class="text-gray-400 text-sm">Пакеты идут напрямую к серверам игр. Идеально для CS2, Valorant и Fortnite.</p>
                 </div>
 
                 <!-- Card 3 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition duration-300 group">
-                    <div class="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition">
-                        <i class="fa-solid fa-list-check text-2xl text-secondary"></i>
+                <div class="glass-card p-8 rounded-2xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-cyan/20 rounded-xl flex items-center justify-center mb-6 text-brand-cyan group-hover:scale-110 transition">
+                        <i class="fa-solid fa-fingerprint text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Полный контроль</h3>
-                    <p class="text-gray-400">Удобное меню управления. Выбирай режимы фильтрации, добавляй свои сайты в списки и управляй службой Windows.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Smart Stealth</h3>
+                    <p class="text-gray-400 text-sm">Интеллектуальная подмена отпечатков. Трафик выглядит как обычный серфинг.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Как это работает (Техническая часть) -->
-    <section id="how-it-works" class="py-24 bg-darker relative overflow-hidden">
-        <!-- Фоновая сетка для эффекта схемы -->
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-        <div class="absolute inset-0" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 40px 40px; opacity: 0.05;"></div>
+    <!-- BANNER 2 (Reverse) -->
+    <div class="marquee-strip">
+        <div class="marquee-track reverse">
+            <!-- КОПИЯ 1 -->
+            <span class="marquee-item">
+                // NO LOGS // NO TRACKING // OPEN SOURCE // HIGH PERFORMANCE // SECURE // NO LOGS // NO TRACKING // OPEN SOURCE // HIGH PERFORMANCE // SECURE // &nbsp;
+            </span>
+            <!-- КОПИЯ 2 -->
+            <span class="marquee-item">
+                // NO LOGS // NO TRACKING // OPEN SOURCE // HIGH PERFORMANCE // SECURE // NO LOGS // NO TRACKING // OPEN SOURCE // HIGH PERFORMANCE // SECURE // &nbsp;
+            </span>
+        </div>
+    </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-primary font-mono text-sm tracking-widest uppercase">Under the hood</span>
-                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-white mt-2">Алгоритм обхода блокировок</h2>
-                <p data-aos="fade-up" data-aos-delay="100" class="mt-4 text-gray-400 max-w-2xl mx-auto">
-                    Мы не скрываем трафик как VPN, мы меняем его структуру, делая невидимым для систем анализа.
+    <!-- TECH SECTION START -->
+    <section id="tech" class="py-32 px-6 relative overflow-hidden">
+        <div class="hud-bg pattern-grid"></div>
+        <!-- Фоновый свет -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-brand-accent font-mono text-xs uppercase tracking-[0.3em] font-bold">Neural Core Architecture</span>
+                <h2 class="text-4xl md:text-6xl font-black mt-4 text-white">АЛГОРИТМ <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">СВОБОДЫ</span></h2>
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Комплексная трансформация сетевого потока. Мы превращаем заблокированный запрос в легальный пакет данных за 0.003 секунды.
+                </p>
+                                <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Каждый пользователь может создать свой отпечаток в интернете, сделав запросы невозможными для чтения ТСПУ!
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative">
+            <div class="relative flex flex-col md:flex-row gap-8 justify-center items-stretch">
                 
-                <!-- Соединительная линия (скрыта на мобильных) -->
-                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-green-500/20 -translate-y-1/2 -z-10"></div>
-
-                <!-- Шаг 1: Перехват -->
-                <div data-aos="fade-right" class="bg-dark/80 backdrop-blur border border-blue-500/30 p-6 rounded-xl relative group hover:-translate-y-2 transition duration-300">
-                    <div class="absolute -top-4 left-6 bg-dark border border-blue-500/50 text-blue-400 px-3 py-1 text-xs font-mono rounded">Step 01</div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 text-blue-400 text-xl">
-                        <i class="fa-solid fa-hand-holding-hand"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Перехват WinDivert</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Библиотека <code class="text-blue-300 bg-blue-900/30 px-1 rounded">WinDivert.dll</code> перехватывает исходящие пакеты игры или браузера до того, как они уйдут в сеть.
-                    </p>
-                    <div class="h-1 w-full bg-gray-800 rounded overflow-hidden">
-                        <div class="h-full bg-blue-500 w-full animate-pulse"></div>
-                    </div>
-                </div>
-
-                <!-- Шаг 2: Модификация (Центр) -->
-                <div data-aos="zoom-in" class="bg-gray-900 border border-purple-500/50 p-8 rounded-2xl shadow-[0_0_30px_rgba(139,92,246,0.15)] relative z-20">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-600 text-white px-4 py-1 text-xs font-bold rounded-full shadow-lg">ENGINE CORE</div>
+                <!-- Блок 1 -->
+                <div class="glass-card p-8 rounded-3xl flex-1 relative group border border-white/5 hover:border-brand-primary/50 transition duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-[#0f172a] border border-brand-primary/30 rounded-xl flex items-center justify-center text-xl font-bold text-brand-primary shadow-lg z-10">01</div>
                     
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-gears text-3xl text-purple-400"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">winws.exe</h3>
-                            <span class="text-xs text-purple-300">Deep Packet Modification</span>
+                    <div class="mb-6 mt-4 flex justify-center">
+                        <div class="w-20 h-20 bg-brand-primary/10 rounded-full flex items-center justify-center icon-glow border border-brand-primary/20">
+                            <i class="fa-solid fa-satellite-dish text-3xl text-brand-primary"></i>
                         </div>
                     </div>
                     
-                    <div class="bg-black/50 rounded p-3 font-mono text-xs text-green-400 mb-4 border-l-2 border-purple-500">
-                        > loading dumps...<br>
-                        > tls_clienthello_max_ru.bin<br>
-                        > quic_initial_www_google.bin<br>
-                        > modifying packet structure...
-                    </div>
-
-                    <p class="text-sm text-gray-400">
-                        Программа разбивает запросы на фрагменты и меняет заголовки, используя дампы <b>Google</b> и <b>Max</b>. Пакет становится "нечитаемым" для фильтров.
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Перехват</h3>
+                    <p class="text-gray-400 text-sm text-center leading-relaxed">
+                        Драйвер <b>WinDivert</b> внедряется в сетевой стек на уровне ядра (Kernel Mode). Он "замораживает" исходящие пакеты до того, как они попадут в фильтр провайдера.
                     </p>
+
+                    <!-- Коннектор (Стрелка вниз для мобилок, вправо для ПК) -->
+                    <div class="absolute md:-right-4 md:top-1/2 left-1/2 md:left-auto -bottom-4 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-20">
+                        <i class="fa-solid fa-chevron-right text-brand-accent text-2xl hidden md:block animate-pulse"></i>
+                        <i class="fa-solid fa-chevron-down text-brand-accent text-2xl md:hidden animate-pulse"></i>
+                    </div>
                 </div>
 
-                <!-- Шаг 3: Проход через ТСПУ -->
-                <div data-aos="fade-left" class="bg-dark/80 backdrop-blur border border-green-500/30 p-6 rounded-xl relative group hover:-translate-y-2 transition duration-300">
-                    <div class="absolute -top-4 right-6 bg-dark border border-green-500/50 text-green-400 px-3 py-1 text-xs font-mono rounded">Step 03</div>
-                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4 text-green-400 text-xl">
-                        <i class="fa-solid fa-ghost"></i>
+                <!-- Линия соединения 1-2 (Визуальная труба) -->
+                <div class="hidden md:block w-16 relative self-center h-1 bg-white/5 overflow-hidden rounded-full">
+                    <div class="pipeline-flow flow-h"></div>
+                </div>
+
+                <!-- Блок 2 (Центральный) -->
+                <div class="glass-card p-8 rounded-3xl flex-1 relative group border-2 border-brand-accent/20 hover:border-brand-accent/80 transition duration-500 shadow-[0_0_30px_rgba(139,92,246,0.1)]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-[#0f172a] border border-brand-accent/50 rounded-xl flex items-center justify-center text-xl font-bold text-brand-accent shadow-lg z-10">02</div>
+                    
+                    <div class="mb-6 mt-4 flex justify-center">
+                        <div class="w-20 h-20 bg-brand-accent/10 rounded-full flex items-center justify-center icon-glow border border-brand-accent/20">
+                            <i class="fa-solid fa-microchip text-3xl text-brand-accent animate-[spin_10s_linear_infinite]"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Обход ТСПУ РКН</h3>
-                    <p class="text-sm text-gray-400 mb-3">
-                        Оборудование DPI (ТСПУ) не распознает запрещенный протокол в модифицированном пакете и пропускает его как обычный "мусор" или легальный трафик.
+                    
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Фрагментация</h3>
+                    <p class="text-gray-400 text-sm text-center leading-relaxed">
+                        Ядро <b>winws.exe</b> разбивает пакеты на микро-сегменты и модифицирует TCP-заголовки. Используется DUMP-маскировка под легальные сервисы. DPI видит "белый шум".
                     </p>
-                    <div class="flex gap-2 mt-4">
-                        <span class="flex items-center gap-1 text-xs text-green-400 bg-green-500/10 px-2 py-1 rounded border border-green-500/20">
-                            <i class="fa-solid fa-check"></i> Discord
-                        </span>
-                        <span class="flex items-center gap-1 text-xs text-green-400 bg-green-500/10 px-2 py-1 rounded border border-green-500/20">
-                            <i class="fa-solid fa-check"></i> YouTube
-                        </span>
+
+                    <!-- Коннектор -->
+                    <div class="absolute md:-right-4 md:top-1/2 left-1/2 md:left-auto -bottom-4 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-20">
+                        <i class="fa-solid fa-chevron-right text-brand-cyan text-2xl hidden md:block animate-pulse"></i>
+                        <i class="fa-solid fa-chevron-down text-brand-cyan text-2xl md:hidden animate-pulse"></i>
                     </div>
+                </div>
+
+                <!-- Линия соединения 2-3 -->
+                <div class="hidden md:block w-16 relative self-center h-1 bg-white/5 overflow-hidden rounded-full">
+                    <div class="pipeline-flow flow-h"></div>
+                </div>
+
+                <!-- Блок 3 -->
+                <div class="glass-card p-8 rounded-3xl flex-1 relative group border border-white/5 hover:border-brand-cyan/50 transition duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-[#0f172a] border border-brand-cyan/30 rounded-xl flex items-center justify-center text-xl font-bold text-brand-cyan shadow-lg z-10">03</div>
+                    
+                    <div class="mb-6 mt-4 flex justify-center">
+                        <div class="w-20 h-20 bg-brand-cyan/10 rounded-full flex items-center justify-center icon-glow border border-brand-cyan/20">
+                            <i class="fa-solid fa-globe text-3xl text-brand-cyan"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-white mb-3 text-center">Синхронизация</h3>
+                    <p class="text-gray-400 text-sm text-center leading-relaxed">
+                        Сервер назначения собирает фрагменты обратно. Устанавливается прямое шифрованное соединение. Провайдер регистрирует обычную активность без блокировок.
+                    </p>
                 </div>
 
             </div>
         </div>
     </section>
+    <!-- TECH SECTION END -->
 
-    <!-- Что восстанавливает -->
-    <section id="games" class="py-24 bg-gray-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div>
-                    <h2 data-aos="fade-right" class="text-3xl md:text-4xl font-bold text-white">Восстанавливает доступ</h2>
-                    <p data-aos="fade-right" class="mt-2 text-gray-400">Проверено на популярных платформах</p>
+    <!-- BANNER 3 -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span class="marquee-item">
+                DISCORD /// YOUTUBE /// TWITCH /// STEAM /// ONLINE GAMES /// FACEBOOK /// INSTAGRAM /// DISCORD /// YOUTUBE /// TWITCH /// STEAM /// &nbsp;
+            </span>
+            <span class="marquee-item">
+                DISCORD /// YOUTUBE /// TWITCH /// STEAM /// ONLINE GAMES /// FACEBOOK /// INSTAGRAM /// DISCORD /// YOUTUBE /// TWITCH /// STEAM /// &nbsp;
+            </span>
+        </div>
+    </div>
+
+        <!-- APPS SECTION START -->
+    <section id="games" class="py-24 px-6 relative bg-gradient-to-b from-transparent to-brand-dark/80">
+        <div class="hud-bg pattern-lines"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 px-4">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-2">Глобальная <span class="text-brand-primary">Поддержка</span></h2>
+                    <p class="text-gray-400">Единое решение для всех платформ. Работает автоматически.</p>
                 </div>
-                <div data-aos="fade-left" class="mt-4 md:mt-0">
-                    <span class="px-4 py-2 bg-green-500/10 text-green-400 rounded-full border border-green-500/20 text-sm font-semibold">
-                        <i class="fa-solid fa-check-circle mr-2"></i>Статус: Стабильно
+                <div class="mt-6 md:mt-0" data-aos="fade-left">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Service Active
                     </span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <!-- Иконки сервисов -->
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in">
-                    <i class="fa-brands fa-discord text-3xl text-[#5865F2]"></i>
-                    <span class="text-sm font-medium">Discord</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                
+                <!-- Discord -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-[#5865F2]/10 hover:border-[#5865F2]/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fa-brands fa-discord text-4xl text-gray-400 group-hover:text-[#5865F2] transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Discord</span>
                 </div>
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in" data-aos-delay="50">
-                    <i class="fa-brands fa-youtube text-3xl text-[#FF0000]"></i>
-                    <span class="text-sm font-medium">YouTube</span>
+
+                <!-- YouTube -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-[#FF0000]/10 hover:border-[#FF0000]/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fa-brands fa-youtube text-4xl text-gray-400 group-hover:text-[#FF0000] transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">YouTube</span>
                 </div>
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-brands fa-twitch text-3xl text-[#9146FF]"></i>
-                    <span class="text-sm font-medium">Twitch</span>
+
+                <!-- Steam -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-[#171a21]/50 hover:border-blue-400/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-brands fa-steam text-4xl text-gray-400 group-hover:text-blue-400 transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Steam</span>
                 </div>
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fa-brands fa-whatsapp text-3xl text-[#25D366]"></i>
-                    <span class="text-sm font-medium">WhatsApp</span>
+
+                <!-- Epic Games -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-white/10 hover:border-white/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="text-4xl font-black text-gray-400 group-hover:text-white transition transform group-hover:scale-110 leading-none">E</div>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Epic Games</span>
                 </div>
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-brands fa-spotify text-3xl text-[#1DB954]"></i>
-                    <span class="text-sm font-medium">Spotify</span>
+
+                <!-- Battle.net -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-[#0074e0]/10 hover:border-[#0074e0]/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-brands fa-battle-net text-4xl text-gray-400 group-hover:text-[#0074e0] transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Battle.net</span>
                 </div>
-                <div class="bg-darker p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center gap-2 hover:border-primary/50 transition" data-aos="zoom-in" data-aos-delay="250">
-                    <i class="fa-solid fa-gamepad text-3xl text-orange-500"></i>
-                    <span class="text-sm font-medium">Games</span>
+
+                <!-- Instagram -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-[#E1306C]/10 hover:border-[#E1306C]/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fa-brands fa-instagram text-4xl text-gray-400 group-hover:text-[#E1306C] transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Instagram</span>
                 </div>
+
+                <!-- RuTracker (Magnet) -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:bg-orange-500/10 hover:border-orange-500/50 transition group cursor-default" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-solid fa-magnet text-4xl text-gray-400 group-hover:text-orange-500 transition transform group-hover:scale-110"></i>
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white uppercase tracking-wider">Ru-Tracker</span>
+                </div>
+
             </div>
-            
-            <p class="text-center text-gray-500 text-sm mt-8">
-                * А также Google Drive, Netflix, ArtStation, DeviantArt и еще 9+ млн хостов.
-            </p>
         </div>
     </section>
+    <!-- APPS SECTION END -->
 
-    <!-- Инструкция -->
-    <section id="install" class="py-24 bg-darker">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Быстрый старт за 3 шага</h2>
+    <!-- Installation -->
+    <section id="install" class="py-24 px-6 bg-brand-primary/5 border-t border-white/5">
+        
+        <div class="max-w-4xl mx-auto">
             
-            <div class="relative">
-                <!-- Линия -->
-                <div class="hidden md:block absolute left-1/2 h-full w-1 bg-gradient-to-b from-primary to-transparent -translate-x-1/2"></div>
+            <h2 class="text-4xl font-bold text-center mb-16">Быстрый старт</h2>
+            
+            <div class="space-y-6">
                 
-                <!-- Шаг 1 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 group">
-                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1 pr-0 md:pr-8" data-aos="fade-right">
-                        <h3 class="text-2xl font-bold text-white mb-2">Скачайте архив</h3>
-                        <p class="text-gray-400">Нажмите кнопку скачать вверху сайта или склонируйте репозиторий через Git.</p>
-                        <div class="mt-3 bg-gray-900 p-3 rounded text-left text-xs font-mono text-gray-300 border border-gray-700 inline-block">
+                <!-- Step 1 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
+                    <div class="w-16 h-16 rounded-full bg-brand-primary flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-primary/30">1</div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white mb-2">Скачайте архив</h3>
+                        <p class="text-gray-400 mb-3">Нажмите кнопку скачать. Распакуйте в удобное место.</p>
+                        <div class="bg-black/40 p-3 rounded border border-white/10 font-mono text-xs text-gray-400 inline-block">
                             git clone https://github.com/ArtworkPunk/zapret-toolkit.git
                         </div>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full border-4 border-darker flex items-center justify-center z-10 order-1 md:order-2 mb-4 md:mb-0">
-                        <span class="font-bold text-white">1</span>
-                    </div>
-                    <div class="md:w-5/12 pl-0 md:pl-8 order-3" data-aos="fade-left">
-                        <div class="bg-white/5 p-4 rounded-lg border border-white/10">
-                            <i class="fa-solid fa-file-zipper text-4xl text-gray-500 mb-2"></i>
-                            <div class="text-sm text-gray-400">Распакуйте в удобное место</div>
-                        </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-brand-accent flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-accent/30">2</div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white mb-2">Запустите Меню</h3>
+                        <p class="text-gray-400 mb-2">Найдите <code>service.bat</code>. Запустите от имени Администратора.</p>
+                        <p class="text-xs text-brand-accent">*В меню выберите пункт 7 (DNS) для очистки кэша перед стартом.</p>
                     </div>
                 </div>
 
-                <!-- Шаг 2 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 group">
-                    <div class="md:w-5/12 pr-0 md:pr-8 order-3 md:order-1 text-right" data-aos="fade-right">
-                        <div class="bg-white/5 p-4 rounded-lg border border-white/10 inline-block">
-                             <div class="text-left font-mono text-sm text-green-400">
-                                > service.bat<br>
-                                [ЗАПУСК ОТ ИМЕНИ АДМИНИСТРАТОРА]
-                             </div>
-                        </div>
-                    </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full border-4 border-darker flex items-center justify-center z-10 order-1 mb-4 md:mb-0">
-                        <span class="font-bold text-white">2</span>
-                    </div>
-                    <div class="md:w-5/12 pl-0 md:pl-8 order-2 md:order-3 text-center md:text-left" data-aos="fade-left">
-                        <h3 class="text-2xl font-bold text-white mb-2">Запустите service.bat</h3>
-                        <p class="text-gray-400">Обязательно запускайте от имени администратора. Откроется меню управления.</p>
-                    </div>
-                </div>
-
-                <!-- Шаг 3 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between group">
-                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1 pr-0 md:pr-8" data-aos="fade-right">
-                        <h3 class="text-2xl font-bold text-white mb-2">Установите сервис</h3>
-                        <p class="text-gray-400">Выберите пункт <strong>1</strong> (Install Bypass Service) для автоматического запуска защиты при включении ПК.</p>
-                    </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full border-4 border-darker flex items-center justify-center z-10 order-1 md:order-2 mb-4 md:mb-0">
-                        <span class="font-bold text-white">3</span>
-                    </div>
-                    <div class="md:w-5/12 pl-0 md:pl-8 order-3" data-aos="fade-left">
-                        <div class="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
-                            <i class="fa-solid fa-check text-green-400 text-2xl mb-2"></i>
-                            <div class="text-sm text-green-300">Готово! Интернет свободен.</div>
+                <!-- Step 3 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center border border-brand-cyan/30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-brand-cyan flex items-center justify-center text-2xl font-bold text-black shadow-lg shadow-brand-cyan/30">3</div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white mb-2">Активируйте</h3>
+                        <p class="text-gray-400 mb-2">Выберите пункт <b>1 (Install Service)</b>. Используйте пресет MaxFuckYouDolbaeb.bat.</p>
+                        <div class="text-brand-cyan font-bold flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-solid fa-check-circle"></i> Система активна.
                         </div>
                     </div>
                 </div>
@@ -384,41 +594,29 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-24 bg-gray-900/50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white text-center mb-12">Частые вопросы</h2>
-            
+    <section id="faq" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
             <div class="space-y-4">
-                <!-- Вопрос 1 -->
-                <div class="bg-darker border border-white/10 rounded-lg overflow-hidden" data-aos="fade-up">
-                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-lg text-white">Служба не запускается, что делать?</span>
-                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                <div class="glass-card rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-white/5 transition" onclick="toggleFaq(this)">
+                        <span>Это безопасно?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-primary"></i>
                     </button>
-                    <div class="hidden px-6 pb-4 text-gray-400 border-t border-white/5">
-                        <p>Выполните полную переустановку: запустите <code>service.bat</code>, выберите пункт 2 (Remove), затем пункт 1 (Install). Также проверьте, не блокирует ли запуск антивирус.</p>
+                    <div class="hidden px-6 pb-4 text-gray-400 text-sm border-t border-white/10 pt-4">
+                        Да. Весь код открыт на GitHub и проверяется сообществом. Программа работает локально, без отправки данных.
                     </div>
                 </div>
-
-                <!-- Вопрос 2 -->
-                <div class="bg-darker border border-white/10 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="50">
-                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-lg text-white">Сайт перестал открываться (ERR_CONNECTION_RESET)</span>
-                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                <div class="glass-card rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-white/5 transition" onclick="toggleFaq(this)">
+                        <span>Что делать если не работает?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-primary"></i>
                     </button>
-                    <div class="hidden px-6 pb-4 text-gray-400 border-t border-white/5">
-                        <p>Добавьте домен сайта в файл <code>lists/list-exclude.txt</code>, чтобы отключить фильтрацию для него, или в <code>lists/list-universal.txt</code> для принудительной фильтрации. После изменений перезапустите службу.</p>
-                    </div>
-                </div>
-
-                <!-- Вопрос 3 -->
-                <div class="bg-darker border border-white/10 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-semibold text-lg text-white">Как добавить свой сайт?</span>
-                        <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
-                    </button>
-                    <div class="hidden px-6 pb-4 text-gray-400 border-t border-white/5">
-                        <p>Добавьте домен в <code>lists/list-universal.txt</code>. Если служба запущена, она подхватит изменения автоматически. Если нет — перезапустите через <code>service.bat</code>.</p>
+                    <div class="hidden px-6 pb-4 text-gray-400 text-sm border-t border-white/10 pt-4">
+                        1. Отключите старую службу (Пункт 2).<br>
+                        2. Смените DNS (Пункт 7).<br>
+                        3. Установите заново (Пункт 1).<br>
+                        Также проверьте, не блокирует ли антивирус файл winws.exe.
                     </div>
                 </div>
             </div>
@@ -426,72 +624,77 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex items-center justify-center gap-2 mb-6">
-                <i class="fa-solid fa-shield-halved text-primary text-2xl"></i>
-                <span class="font-bold text-xl text-white">ZAPRET <span class="text-primary">TOOLKIT</span></span>
+    <footer class="py-12 bg-brand-bg text-center border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-2 mb-6 opacity-80">
+                <i class="fa-solid fa-bolt text-brand-primary text-2xl"></i>
+                <span class="font-bold text-xl tracking-wider">ZAPRET TOOLKIT</span>
             </div>
-            <p class="text-gray-500 mb-6">Ultimate solution for bypassing internet censorship and DPI blocking.</p>
-            <div class="flex justify-center gap-6 mb-8">
+            
+            <div class="flex justify-center gap-8 mb-8">
                 <a href="https://github.com/ArtworkPunk/Zapret-Toolkit" class="text-gray-400 hover:text-white transition text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="text-gray-600 text-sm">
+
+            <p class="text-gray-700 text-xs font-mono">
                 Project is distributed under MIT License. <br>
-                Based on zapret by bol-van. Developed by ArtworkPunk.
+                Based on zapret by bol-van.
+            </p>
+            <p id="author-tag" class="text-gray-700 text-xs font-mono tracking-[0.4em] select-none">
+                Developed by ArtworkPunk.
             </p>
         </div>
     </footer>
 
-<!-- Скрипты -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. Анимации
+        // Init Animations
         AOS.init({ duration: 800, once: true });
 
-        // 2. FAQ
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('i');
+        // FAQ Logic
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
             content.classList.toggle('hidden');
             icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
         }
 
-        // 3. 🛡️ ПАСХАЛКА
-        !function(){
-            const _signature = "\x44\x65\x76\x65\x6C\x6F\x70\x65\x64\x20\x62\x79\x20\x41\x72\x74\x77\x6F\x72\x6B\x50\x75\x6E\x6B";
-            
-            setInterval(() => {
-                if (!document.body.innerText.includes(_signature)) {
+        // 🛡️ PROTECTION SCRIPT (ROBUST VERSION)
+        !function() {
+            // 1. Target ID in Footer
+            const targetId = "author-tag";
+            // 2. Required Text Fragment
+            const requiredText = "ArtworkPunk";
+
+            function triggerLock() {
+                document.body.innerHTML = '';
+                document.body.style.backgroundColor = '#000';
+                document.body.style.display = 'flex';
+                document.body.style.justifyContent = 'center';
+                document.body.style.alignItems = 'center';
+                document.body.style.height = '100vh';
+                document.body.innerHTML = '<div style="color:red;font-family:monospace;font-size:24px;text-align:center;">CRITICAL ERROR: INTEGRITY VIOLATION<br>AUTHOR SIGNATURE MISSING</div>';
+            }
+
+            // Wait 2s for load, then check every 2s
+            setTimeout(() => {
+                setInterval(() => {
+                    const el = document.getElementById(targetId);
                     
-                    document.body.innerHTML = '';
-                    document.body.style.backgroundColor = '#000';
+                    // Check if element exists
+                    if (!el) return triggerLock();
                     
-                    const div = document.createElement('div');
-                    div.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; color:red; font-family:monospace; z-index:9999; text-align:center; background:black;';
-                    div.innerHTML = `
-                        <h1 style="font-size:4rem; margin:0; text-shadow:0 0 20px red">SYSTEM HACKED</h1>
-                        <h2 style="color:white; letter-spacing:5px;">DON'T STEAL CODE</h2>
-                        <div style="margin-top:40px; border:1px solid red; padding:20px; color:#fff;">
-                            > ERROR: AUTHOR_CREDITS_MISSING<br>
-                            > ORIGINAL_AUTHOR: ArtworkPunk<br>
-                            > ACTION: SITE_LOCKED
-                        </div>
-                    `;
-                    document.body.appendChild(div);
-                }
-            }, 1000); 
+                    // Check text content
+                    if (!el.innerText.includes(requiredText)) return triggerLock();
+                    
+                    // Check visibility (anti-hide)
+                    const style = window.getComputedStyle(el);
+                    if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+                        return triggerLock();
+                    }
+                }, 2000);
+            }, 2000);
         }();
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
