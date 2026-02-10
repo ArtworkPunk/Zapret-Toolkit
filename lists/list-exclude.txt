@@ -205,5 +205,35 @@ edgecastcdn.net
 llnwd.net
 *.llnwd.net
 
+# Call of Duty Warzone & Activision (Matchmaking & Gameplay)
+demonware.net
+*.demonware.net
+activision.com
+*.activision.com
+atvi.com
+*.atvi.com
+callofduty.com
+*.callofduty.com
 
+# Ricochet Anti-Cheat
+ricochetanticheat.com
+*.ricochetanticheat.com
 
+# --- Steam Achievements, Avatars & Screenshots ---
+steamstatic.com
+*.steamstatic.com
+steamuserimages-a.akamaihd.net
+*.steamuserimages-a.akamaihd.net
+steamcdn-a.akamaihd.net
+*.steamcdn-a.akamaihd.net
+steambroadcast.akamaized.net
+*.steambroadcast.akamaized.net
+steamloopback.host
+
+# --- Steam Community & Web UI ---
+steamcommunity.com
+*.steamcommunity.com
+steampowered.com
+*.steampowered.com
+help.steampowered.com
+store.steampowered.com

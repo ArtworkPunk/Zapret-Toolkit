@@ -401,7 +401,6 @@ hdrezka.solutions
 rezka-ua.tv
 hello-rezka.tv
 
-
 # Blizzard Auth & Shop UI
 eu.patch.battle.net
 us.patch.battle.net
@@ -415,3 +414,8 @@ vivox.net
 # Реклама и новости в лаунчере
 blz-contentstack.com
 *.blz-contentstack.com
+
+# Activision Auth & Web
+auth.activision.com
+profile.callofduty.com
+s.activision.com
