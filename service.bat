@@ -721,7 +721,7 @@ echo  Current settings will be overwritten for Ethernet/Wi-Fi.
 echo.
 echo  1. Cloudflare (1.1.1.1)
 echo  2. Google     (8.8.8.8)
-echo  3. Yandex     (77.88.8.8)
+echo  3. Quad9      (9.9.9.9)
 echo  4. Auto / Reset (DHCP)
 echo  0. Back
 echo.
@@ -737,7 +737,7 @@ if "%dns_c%"=="2" (
     goto apply_dns
 )
 if "%dns_c%"=="3" (
-    set "DNS1=77.88.8.8" && set "DNS2=77.88.8.1" && set "DNSName=Yandex"
+    set "DNS1=9.9.9.9" && set "DNS2=149.112.112.112" && set "DNSName=Quad9"
     goto apply_dns
 )
 if "%dns_c%"=="4" goto reset_dns
