@@ -237,3 +237,6 @@ steampowered.com
 *.steampowered.com
 help.steampowered.com
 store.steampowered.com
+
+# Bluestacks
+bsxplayer.bluestacks.com
