@@ -65,7 +65,7 @@
 | Категория | Сервисы | Статус |
 |-----------|---------|--------|
 | 🎮 **Игры** | Roblox, Fortnite, CS2, Dota 2, Arc Raiders | ✅ Работает |
-| 📺 **Видео** | YouTube (Music/Shorts), Twitch, Netflix | ✅ Работает |
+| 📺 **Видео** | YouTube (Music/Shorts), Twitch | ✅ Работает |
 | 💬 **Чат** | Discord, Telegram | ✅ Работает |
 | 🎵 **Музыка** | Spotify (с аккаунтом), SoundCloud | ✅ Работает |
 | 🎨 **Дизайн** | DeviantArt, ArtStation, Behance | ✅ Работает |
