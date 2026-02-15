@@ -118,6 +118,7 @@
 
 <div align="center">
 
-**Developed by Artworkpunk to user**  
+**Developed Toolkit by Artworkpunk**
+**Developed Zapret by bol-van**
 
 </div>
