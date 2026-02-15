@@ -1,439 +1,123 @@
 # 🛡️ ZAPRET Advanced Bypass Toolkit
 
 <div align="center">
-  
-![GitHub stars](https://img.shields.io/github/stars/ArtworkPunk/zapret-toolkit?style=for-the-badge&color=yellow)
-![GitHub forks](https://img.shields.io/github/forks/ArtworkPunk/zapret-toolkit?style=for-the-badge&color=blue)
+
+![GitHub stars](https://img.shields.io/github/stars/ArtworkPunk/Zapret-Toolkit?style=for-the-badge&color=yellow)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-informational?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/DPI_Bypass-Active-success?style=for-the-badge)
 
-**Ultimate solution for bypassing internet censorship and DPI blocking**
+**Инженерное решение для обхода ТСПУ, DPI-фильтрации и восстановления доступа к заблокированным ресурсам**
 
-</div>
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Russian-версия-red" alt="Russian">
-  <img src="https://img.shields.io/badge/English-version-blue" alt="English">
-</div>
+[🔍 Web Checker (DPI/TCP Analyzer)](https://artworkpunk.github.io/Zapret-Toolkit-Checker/) | [📦 Latest Release](https://github.com/ArtworkPunk/Zapret-Toolkit/releases)
 
 ---
 
-## 📖 Содержание / Table of Contents
-- [🇷🇺 Русская версия](#-русская-версия)
-  - [✨ Возможности](#возможности)
-  - [🎯 Что восстанавливает](#что-восстанавливает)
-  - [🚀 Быстрый старт](#быстрый-старт)
-  - [📁 Структура проекта](#структура-проекта)
-  - [⚙️ Конфигурация](#конфигурация)
-  - [🔧 Управление](#управление)
-  - [❓ Частые вопросы](#частые-вопросы)
-- [🇺🇸 English Version](#-english-version)
-  - [✨ Features](#features)
-  - [🎯 What It Restores](#what-it-restores)
-  - [🚀 Quick Start](#quick-start)
-  - [📁 Project Structure](#project-structure)
-  - [⚙️ Configuration](#configuration)
-  - [🔧 Management](#management)
-  - [❓ FAQ](#faq)
+[🇷🇺 Русская версия](#-русская-версия) | [🇺🇸 English Version](#-english-version)
+
+</div>
+
 ---
 
 # 🇷🇺 Русская версия
 
-## ✨ Возможности
+## 🛠 Описание работы
+**Zapret Toolkit** — это мощная надстройка над ядром `winws.exe`, разработанная специально для обхода продвинутых методов цензуры (ТСПУ). Программа перехватывает сетевые пакеты на уровне драйвера и модифицирует их таким образом, чтобы системы глубокого анализа трафика (DPI) не могли распознать целевой домен.
 
-### 🛡️ **Многоуровневая защита**
-- **Интеллектуальная DPI-фильтрация** с десинхронизацией
-- **TLS/QUIC маскировка** для обхода глубокого анализа пакетов
-- **Адаптивные алгоритмы** под разные типы блокировок
-
-### 🌐 **Полная поддержка**
-- **🎮 Игровые сервисы** (Discord, Steam, игровые лаунчеры)
-- **📺 Медиаплатформы** (YouTube, Twitch, Spotify)
-- **💬 Мессенджеры** (WhatsApp, Telegram)
-- **🎨 Креативные платформы** (DeviantArt, ArtStation)
-- **И еще 9+ миллионов хостов**
-
-### ⚡ **Оптимизация**
-- **Минимальная задержка** для игр и стриминга
-- **Эффективное использование ресурсов** (~50-100 МБ ОЗУ)
-- **Автоматическая диагностика** конфликтов
-
-## 🎯 Что восстанавливает
-
-<div align="center">
-
-| Категория | Сервисы | Статус |
-|-----------|---------|--------|
-| 🎮 **Игры** | Roblox, Fortnite, CS2, Dota 2, Arc Raiders | ✅ Работает |
-| 📺 **Видео** | YouTube (Music/Shorts), Twitch | ✅ Работает |
-| 💬 **Чат** | Discord, Telegram | ✅ Работает |
-| 🎵 **Музыка** | Spotify (с аккаунтом), SoundCloud | ✅ Работает |
-| 🎨 **Дизайн** | DeviantArt, ArtStation, Behance | ✅ Работает |
-| ☁️ **Облака** | Google Drive, Dropbox, OneDrive | ✅ Работает |
-
-</div>
-
-> **✅ Проверка работоспособности**: После установки убедитесь через сервис [DPI Checker](https://hyperion-cs.github.io/dpi-checkers/ru/tcp-16-20/), что все сервера прошли проверку.
-
-## 🚀 Быстрый старт
-
-### 1. 📥 **Скачивание**
-```
-git clone https://github.com/yourusername/zapret-toolkit.git
-cd zapret-toolkit
-```
-
-### 2. 🛠️ **Установка**
-**Запустите сервисный менеджер (права администратора)**
-```
-service.bat
-```
-
-### 3. ⚙️ **Выбор режима**
-
-```
-Install Bypass Service 📥 / Установить как службу Windows
-Remove Bypass Services 🗑️ / Удалить службы
-Check Status 📊 / Проверить статус
-Run Diagnostics 🔍 / Диагностика системы
-Switch Game Filter 🎮 / Вкл/Выкл игровые порты
-Switch IP Filter 🌐 / Вкл/Выкл IP-фильтрацию
-```
-
-**Рекомендуется**: Выберите **1** для установки как службы (автозапуск).
-
-## 📁 Структура проекта
-
-```
-ZAPRET/
-├── 📂 bin/ # Исполняемые файлы
-│ ├── ⚙️ winws.exe # Основной движок обхода
-│ ├── 🔒 tls_clienthello_max_ru.bin
-│ └── 🚀 quic_initial_www_google_com.bin
-│
-├── 📂 lists/ # Конфигурационные списки
-│ ├── ✅ list-exclude.txt # Whitelist (исключения)
-│ ├── 🌍 list-universal.txt # Основные правила
-│ ├── 🌎 list-foreign.txt # Зарубежные домены
-│ ├── 🌎 list-general.txt # Все хосты и домены
-│ ├── 🔍 list-google.txt # Google сервисы
-│ ├── 💬 list-whatsapp.txt # WhatsApp
-│ ├── 🎮 list-games.txt # Игры
-│ ├── 📊 ipset-all.txt # IP-адреса
-│ └── ⚠️ ipset-exclude.txt # IP-исключения
-│
-├── 🛠️ service.bat # Сервисный менеджер
-└── ⚡ MaxFuckYouDolbaeb.bat # Основной скрипт
-```
-
-## ⚙️ Конфигурация
-
-### 🔧 **Уровни фильтрации**
-```
-# Лайтовая фильтрация (.ru, .рф, .su)
---dpi-desync=fake --dpi-desync-repeats=1
-
-# Полная фильтрация (.com, .net, .org)  
---dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts
-
-# Игровые протоколы
---dpi-desync=fake --dpi-desync-repeats=4 --dpi-desync-fake-quic
-```
-
-✅ Добавление исключений
-Чтобы сайт работал без фильтрации, добавьте его в **lists/list-exclude.txt:**
-```
-your-site.com
-*.your-site.com
-subdomain.your-site.com
-```
-
-## 🎮 Игровые порты
-Включено: 1024-65535 (полная фильтрация игр)
-
-Выключено: только порт 12 (минимальная фильтрация)
-
-## 🔧 Управление
-
-**📊 Через графическое меню**
-```
-service.bat
-```
-
-**💻 Через командную строку**
-```
-# Статус службы
-service.bat status_zapret
-
-# Загрузка игровых фильтров
-service.bat load_game_filter
-
-# Установка как службы
-service.bat install
-```
-
-**🖥️ Ручной запуск**
-```
-MaxFuckYouDolbaeb.bat
-```
-
-❓ Частые вопросы
-<details> <summary><b>❓ ERR_CONNECTION_RESET на конкретном сайте</b></summary>
- 
-Добавьте сайт в lists/list-exclude.txt: (остановит фильтрацию для сайта)
-
-problematic-site.com
-
-*.problematic-site.com
-
-problematic-site.ru
-
-*.problematic-site.ru
-
-После добавления перезапустите службу. (Если автоматически не применилось)
-
-Добавьте сайт в lists/list-universal.txt: (добавит фильтрацию для сайта)
-
-problematic-site.com
-
-*.problematic-site.com
-
-problematic-site.ru
-
-*.problematic-site.ru
-
-После добавления перезапустите службу. (Если автоматически не применилось)
-
-</details><details> <summary><b>❓ Служба не запускается</b></summary>
- 
-Выполните полную переустановку:
-
-service.bat → 2. Remove Bypass Services
-
-service.bat → 1. Install Bypass Service
-
-Если после переустановки не запускается, проверить антивирусник который установлен на пк.
-</details><details> <summary><b>❓ Высокое потребление ресурсов</b></summary>
- 
-Нормальные показатели:
-
-Память: ~50-100 МБ
-
-CPU: <2% в простое
-
-Сеть: нулевая задержка для исключений
-
-Если выше — проверьте конфликты с антивирусом.
-
-</details><details> <summary><b>❓ Как добавить новый сайт?</b></summary>
- 
-Добавьте домен в соответствующий файл:
-
-Для любых сайтов — lists/list-universal.txt
-
-Если служба работает то она автоматически подхватит новые данные после сохранения, если нет (не запускает) то выполнить переустановку через service.bat
-
-</details>
-
-
-
-
+### 🚀 Ключевые технологии обхода
+*   **Binary Handshake Spoofing**: Использование уникальных слепков `tls_clienthello_max_ru.bin`, которые имитируют обращение к легитимным российским ресурсам (Госуслуги, Ростелеком).
+*   **IP-ID Zeroing**: Обнуление идентификаторов пакетов для предотвращения отслеживания сессии системами фильтрации.
+*   **Multi-Strategy Filtering**: Разделение трафика на потоки (YouTube, Discord, Games) с применением индивидуальных параметров десинхронизации для каждого.
+*   **UDP QUIC Bypass**: Маскировка протокола HTTP/3 для мгновенной прогрузки видео в 4K и 8K.
 
 ---
 
-# 🇺🇸 English Version
+## 🎯 Поддержка сервисов
 
-## ✨ Features
+| Ресурс | Статус | Технология |
+|:---:|:---|:---:|
+| 📺 | **YouTube / Music** | Full 4K/8K Bypass via Max-Dump |
+| 💬 | **Discord (Full)** | Voice RTC Fix + Screenshare + Avatar Load |
+| 🎮 | **Gaming Online** | Apex Legends, Warzone, Arena Breakout (Low Ping) |
+| 🌐 | **Global Web** | Instagram, Facebook, Twitter |
 
-### 🛡️ **Multi-Layer Protection**
-- **Intelligent DPI filtering** with desynchronization
-- **TLS/QUIC masking** to bypass deep packet analysis
-- **Adaptive algorithms** for different types of blocking
+---
 
-### 🌐 **Full Support**
-- **🎮 Gaming Services** (Discord, Steam, game launchers)
-- **📺 Media Platforms** (YouTube, Twitch, Spotify)
-- **💬 Messengers** (WhatsApp, Telegram)
-- **🎨 Creative Platforms** (DeviantArt, ArtStation)
-- **And over 9+ million hosts**
+## 📂 Структура и профили
 
-### ⚡ **Optimization**
-- **Minimal latency** for gaming and streaming
-- **Efficient resource usage** (~50-100 MB RAM)
-- **Automatic diagnostics** for conflicts
+*   **`service.bat`** — Центральный менеджер. Позволяет устанавливать обход как системную службу, менять DNS и обходить блокировки по IP через HOSTS.
+*   **`MaxFuckYouDolbaeb.bat`** — Основной «боевой» скрипт. Содержит 16 уровней фильтрации для максимальной проходимости.
+*   **`DUMP_GEN_PRO.bat`** — Генератор ваших собственных уникальных дампов. Если стандартные методы «палятся» провайдером, создайте свой личный бинарник за 1 секунду.
+*   **`lists/`** — Папка со списками. 
+    *   `list-universal.txt` — добавьте сюда домен, если он не открывается.
+    *   `list-exclude.txt` — добавьте сюда сайт/домен, если он тормозит (Сайт/Домен не заблокирован в рф).
 
-## 🎯 What It Restores
+---
+
+## 🚀 Инструкция по запуску
+
+1.  **Скачивание**: Распакуйте архив в папку без пробелов в пути.
+2.  **Исключения**: Добавьте папку в **исключения Антивируса** и Защитника Windows. (Если mL (Machine learning) начнет ругатся, в других случаях можно ничего не делать)
+3.  **Установка**: Запустите `service.bat` от админа и установите через [ 1 ] MaxFuckYouDolbaeb.bat.
+4.  **Проверка**: Откройте наш [Web Checker](https://artworkpunk.github.io/Zapret-Toolkit-Checker/) для подтверждения статуса "Not detected".
+
+---
+
+---
+
+## ❓ ЧАСТО задаваемые вопросы
+
+**Вопрос: Почему мой антивирус помечает toolkit?**
+
+**Ответ: Это Ложный срабатывающий сигнал. toolkit использует драйвер Windivert'а для перехвата пакетов на уровне ядра, что вызывает эвристические предупреждения mL (Machine learning).  Он безопасен в использовании.**
+
+**Вопрос: Discord voice не подключается.**
+
+**Ответ: Переключите сервер/голосовой-чат на Роттердам.**
+
+---
+
+# 🇺🇸 English Version (auto translate)
+
+## 🛠 Overview
+**Zapret Toolkit** is a professional-grade Windows utility designed to bypass Deep Packet Inspection (DPI) and state-level internet censorship. It utilizes the `winws.exe` engine and `WinDivert` driver to manipulate network packets in real-time.
+
+### 🚀 Key Features
+*   **Custom TLS Handshakes**: Spoof your traffic using binary dumps that mimic non-blocked, trusted domains.
+*   **TCP/UDP Desynchronization**: Advanced `fake`, `split`, and `disorder` strategies to confuse DPI sniffers.
+*   **Game-Ready Latency**: Specifically tuned for low-ping performance in competitive shooters and MMOs.
+*   **Auto-TTL Discovery**: Automatically adapts to your ISP's network topology to find the optimal bypass distance.
+
+---
+
+## 📊 Connection Status
+
+*   **Social Media**: Instagram, Facebook, X (Twitter) — **RESTORED**
+*   **Streaming**: YouTube 4K/8K, Twitch, SoundCloud — **RESTORED**
+*   **Communication**: Discord (Voice/Video), Telegram — **RESTORED**
+*   **Development**: GitHub, Docker, NPM, OpenAI — **RESTORED**
+
+---
+
+## 📂 Toolkit Components
+
+*   **`service.bat`**: The command center for service installation, DNS management, and manual IP mapping.
+*   **`DUMP_GEN_PRO.bat`**: Create your own unique bypass signatures to stay ahead of DPI updates.
+*   **`MaxFuckYouDolbaeb.bat`**: The flagship high-power bypass profile for Russian ISPs (Rostelecom, MGTS, etc.).
+
+---
+
+## ❓ FAQ
+
+**Q: Why does my antivirus flag the toolkit?**  
+**A:** This is a **False Positive**. The toolkit uses the `WinDivert` driver to intercept packets at the kernel level, which triggers heuristic warnings. It is safe to use.
+
+**Q: Discord voice is not connecting.**  
+**A:** Switch the server/voice chat to Rotterdam.
+
+---
 
 <div align="center">
 
-| Category | Services | Status |
-|----------|----------|--------|
-| 🎮 **Games** | Roblox, Fortnite, Valorant, CS2, Dota 2, Arc Raiders | ✅ Working |
-| 📺 **Video** | YouTube (Music/Shorts), Twitch, Netflix | ✅ Working |
-| 💬 **Chat** | Discord, WhatsApp, Telegram, Signal | ✅ Working |
-| 🎵 **Music** | Spotify (with account), SoundCloud | ✅ Working |
-| 🎨 **Design** | DeviantArt, ArtStation, Behance | ✅ Working |
-| ☁️ **Cloud** | Google Drive, Dropbox, OneDrive | ✅ Working |
+**Developed by Artworkpunk to user**  
 
 </div>
-
-> **✅ Performance Check**: After installation, verify with the [DPI Checker](https://hyperion-cs.github.io/dpi-checkers/en/tcp-16-20/) that all servers pass the test.
-
-## 🚀 Quick Start
-
-### 1. 📥 **Download**
-```
-git clone https://github.com/yourusername/zapret-toolkit.git
-cd zapret-toolkit
-```
-
-### 2. 🛠️ **Installation**
-**Run the service manager (administrator rights required)**
-```
-service.bat
-```
-
-### 3. ⚙️ **Select Mode**
-
-```
-Install Bypass Service 📥 / Install as Windows Service
-Remove Bypass Services 🗑️ / Remove services
-Check Status 📊 / Check status
-Run Diagnostics 🔍 / System diagnostics
-Switch Game Filter 🎮 / Toggle game ports
-Switch IP Filter 🌐 / Toggle IP filtering
-```
-
-**Recommended**: Choose **1** to install as a service (auto-start).
-
-## 📁 Project Structure
-
-```
-ZAPRET/
-├── 📂 bin/ # Executable files
-│ ├── ⚙️ winws.exe # Main bypass engine
-│ ├── 🔒 tls_clienthello_max_ru.bin
-│ └── 🚀 quic_initial_www_google_com.bin
-│
-├── 📂 lists/ # Configuration lists
-│ ├── ✅ list-exclude.txt # Whitelist (exceptions)
-│ ├── 🌍 list-universal.txt # Main rules
-│ ├── 🌎 list-foreign.txt # Foreign domains
-│ ├── 🌎 list-general.txt # All hosts and domains
-│ ├── 🔍 list-google.txt # Google services
-│ ├── 💬 list-whatsapp.txt # WhatsApp
-│ ├── 🎮 list-games.txt # Games
-│ ├── 📊 ipset-all.txt # IP addresses
-│ └── ⚠️ ipset-exclude.txt # IP exceptions
-│
-├── 🛠️ service.bat # Service manager
-└── ⚡ MaxFuckYouDolbaeb.bat # Main script
-```
-
-## ⚙️ Configuration
-
-### 🔧 **Filter Levels**
-```
-Light filtering (.ru, .рф, .su)
---dpi-desync=fake --dpi-desync-repeats=1
-
-Full filtering (.com, .net, .org)
---dpi-desync=fake --dpi-desync-repeats=3 --dpi-desync-fooling=ts
-
-Gaming protocols
---dpi-desync=fake --dpi-desync-repeats=4 --dpi-desync-fake-quic
-```
-
-### ✅ **Adding Exceptions**
-To make a site work without filtering, add it to **lists/list-exclude.txt:**
-```
-your-site.com
-*.your-site.com
-subdomain.your-site.com
-```
-
-## 🎮 Game Ports
-Enabled: 1024-65535 (full game filtering)
-
-Disabled: only port 12 (minimal filtering)
-
-## 🔧 Management
-
-**📊 Via Graphical Menu**
-```
-service.bat
-```
-
-**💻 Via Command Line**
-```
-Service status
-service.bat status_zapret
-
-Load game filters
-service.bat load_game_filter
-
-Install as service
-service.bat install
-```
-
-**🖥️ Manual Start**
-```
-MaxFuckYouDolbaeb.bat
-```
-
-❓ Frequently Asked Questions
-<details> <summary><b>❓ ERR_CONNECTION_RESET on specific site</b></summary>
- 
-Add the site to lists/list-exclude.txt: (will stop filtering for the site)
-
-problematic-site.com
-
-*.problematic-site.com
-
-problematic-site.ru
-
-*.problematic-site.ru
-
-After adding, restart the service. (If not applied automatically)
-
-Add the site to lists/list-universal.txt: (will add filtering for the site)
-
-problematic-site.com
-
-*.problematic-site.com
-
-problematic-site.ru
-
-*.problematic-site.ru
-
-After adding, restart the service. (If not applied automatically)
-
-</details><details> <summary><b>❓ Service won't start</b></summary>
- 
-Perform a full reinstallation:
-
-service.bat → 2. Remove Bypass Services
-
-service.bat → 1. Install Bypass Service
-
-If it still doesn't start after reinstallation, check the antivirus software installed on your PC.
-</details><details> <summary><b>❓ High resource usage</b></summary>
- 
-
-Normal metrics:
-
-- **Memory**: ~50-100 MB
-- **CPU**: <2% idle
-- **Network**: zero latency for exceptions
-
-If higher — check for conflicts with antivirus.
-
-</details><details> <summary><b>❓ How to add a new site?</b></summary>
- 
-Add the domain to the appropriate file:
-
-- For any sites — lists/list-universal.txt
-
-If the service is running, it will automatically pick up new data after saving. If not (won't start), perform a reinstallation via service.bat.
-
-</details>
