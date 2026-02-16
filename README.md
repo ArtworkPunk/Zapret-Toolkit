@@ -38,7 +38,7 @@
 | 📺 | **YouTube / Music** | Full 4K/8K Bypass via Max-Dump |
 | 💬 | **Discord (Full)** | Voice RTC Fix + Screenshare + Avatar Load |
 | 🎮 | **Gaming Online** | Apex Legends, Warzone, Arena Breakout (Low Ping) |
-| 🌐 | **Global Web** | Instagram, Facebook, Twitter |
+| 🌐 | **Global Web** | Instagram, Facebook, Twitter, Telegram |
 
 ---
 
