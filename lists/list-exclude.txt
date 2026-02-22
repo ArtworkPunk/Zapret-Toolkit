@@ -72,6 +72,8 @@ sun83-1.userapi.com
 sun9-81.userapi.com
 buffbuff.com
 wj-static-eo.winudf.com
+playdeltaforce.com
+images.steamusercontent.com
 
 # Apex Legends
 ea.com

@@ -16,6 +16,7 @@ m.music.youtube.com
 www.youtube.com
 youtube.com
 
+telegram.com
 
 # Twitch
 twitch.tv
@@ -50,6 +51,21 @@ telegram.org
 whatsapp.com
 *.whatsapp.com
 web.whatsapp.com
+whatsapp.net
+wa.me
+wl.co
+whatsappbrand.com
+whatsapp.cc
+whatsapp-plus.info
+whatsapp-plus.me
+whatsapp-plus.net
+whatsapp.org
+whatsapp.tv
+whatsapp.info
+b.ns.whatsapp.net
+c.ns.whatsapp.net
+d.ns.whatsapp.net
+a.ns.whatsapp.net
 
 # Instagram/Facebook
 instagram.com
@@ -276,6 +292,7 @@ ovh.com
 *.ovhcloud.com
 *.soyoustart.com
 *.kimsufi.com
+ovhcloud.com
 
 # Oracle Cloud
 oracle.com
