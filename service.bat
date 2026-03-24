@@ -7,7 +7,7 @@ cd /d "%~dp0"
 
 :: --- CONFIGURATION ---
 set "APP_TITLE=ZAPRET TOOLKIT"
-set "LOCAL_VERSION=1.2.3 (ArtworkPunk Edition)"
+set "LOCAL_VERSION=1.2.4 (ArtworkPunk Edition)"
 set "REPO_URL=https://github.com/ArtworkPunk/Zapret-Toolkit"
 set "CHECKER_URL=https://artworkpunk.github.io/Zapret-Toolkit-Checker/"
 set "HOSTS_FILE=%WINDIR%\System32\drivers\etc\hosts"
@@ -834,6 +834,4 @@ exit /b
 
 :PrintRes
 if "%2"=="1" ( echo  %c_grn%[+] %~1%c_rst% ) else if "%2"=="2" ( echo  %c_yel%[?] %~1%c_rst% ) else ( echo  %c_red%[X] %~1%c_rst% )
-
 exit /b
-

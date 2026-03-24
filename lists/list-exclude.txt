@@ -74,6 +74,9 @@ buffbuff.com
 wj-static-eo.winudf.com
 playdeltaforce.com
 images.steamusercontent.com
+gameloop.club
+down.gameloop.com
+memuplay.com
 
 # Apex Legends
 ea.com
@@ -94,6 +97,7 @@ origin.com
 *.akamaihd.net
 *.akamaized.net
 *.eaassets-*.akamaihd.net
+mumuplayer.com
 
 
 # Cloudflare Server
