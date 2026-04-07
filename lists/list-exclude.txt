@@ -78,6 +78,10 @@ gameloop.club
 down.gameloop.com
 memuplay.com
 private-user-images.githubusercontent.com
+hub.fgg.com.cn
+webappinternal.telegram.org
+openclaw.ai
+
 
 # Apex Legends
 ea.com
