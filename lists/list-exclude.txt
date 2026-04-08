@@ -251,3 +251,22 @@ store.steampowered.com
 
 # Bluestacks
 bsxplayer.bluestacks.com
+
+
+# Fortnite & Epic Games Core
+epicgames.com
+*.epicgames.com
+unrealengine.com
+*.unrealengine.com
+*.ol.epicgames.com
+*.download.epicgames.com
+*.epicgames-download1.akamaized.net
+fortnite.com
+*.fortnite.com
+*.ecommerce.epicgames.com
+account-public-service-prod.ol.epicgames.com
+lightswitch-public-service-prod.ol.epicgames.com
+launcher-public-service-prod.ol.epicgames.com
+# CDN для картинок и лобби
+cdn2.unrealengine.com
+*.cdn2.unrealengine.com
