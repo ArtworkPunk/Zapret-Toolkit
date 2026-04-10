@@ -170,6 +170,7 @@ unrealengine.com
 account-public-service-prod.ol.epicgames.com
 lightswitch-public-service-prod.ol.epicgames.com
 launcher-public-service-prod.ol.epicgames.com
+www.fortnite.com.cdn.cloudflare.net
 
 
 # Steam
@@ -436,3 +437,33 @@ blz-contentstack.com
 auth.activision.com
 profile.callofduty.com
 s.activision.com
+
+# Fortnite & Epic Games (Недостающие сервера матчмейкинга и лобби)
+fortnite.com
+accounts.epicgames.com
+*.on.epicgames.com
+party-service-prod.ol.epicgames.com
+matchmaking-service-prod.ol.epicgames.com
+events-public-service-live.ol.epicgames.com
+fortnite-public-service-prod11.ol.epicgames.com
+
+# Epic Games CDN (Недостающие сервера для магазина и обновлений)
+cdn2.unrealengine.com
+*.cdn2.unrealengine.com
+download.epicgames.com
+*.epicgames.akamaized.net
+ecommerce.epicgames.com
+
+# Anti-Cheat (Критично для запуска Fortnite)
+easyanticheat.net
+*.easyanticheat.net
+easy.ac
+*.easy.ac
+download.eac-cdn.com
+battleye.com
+*.battleye.com
+
+# Telemetry & Stats (Чтобы меню игры не ждало ответа вечно)
+stattracking.epicgames.com
+telemetry.epicgames.com
+*.telemetry.epicgames.com
