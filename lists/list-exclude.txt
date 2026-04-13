@@ -82,6 +82,7 @@ private-user-images.githubusercontent.com
 hub.fgg.com.cn
 webappinternal.telegram.org
 openclaw.ai
+gosuslugi.ru
 
 
 # Apex Legends
