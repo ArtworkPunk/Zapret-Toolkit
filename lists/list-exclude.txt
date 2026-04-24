@@ -83,6 +83,8 @@ hub.fgg.com.cn
 webappinternal.telegram.org
 openclaw.ai
 gosuslugi.ru
+yoomoney.ru
+
 
 
 # Apex Legends

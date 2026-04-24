@@ -17,6 +17,22 @@ www.youtube.com
 youtube.com
 
 telegram.com
+web.telegram.org
+fortnite.gg
+
+# Facepunch & Rust API
+facepunch.com
+*.facepunch.com
+api.facepunch.com
+nexus.facepunch.com
+playrust.com
+*.playrust.com
+maps.rustmaps.com
+*.maps.rustmaps.com
+facepunch.com
+*.facepunch.com
+playrust.com
+physgun.com
 
 # Twitch
 twitch.tv
