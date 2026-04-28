@@ -84,6 +84,7 @@ webappinternal.telegram.org
 openclaw.ai
 gosuslugi.ru
 yoomoney.ru
+yota.ru
 
 
 

@@ -20,6 +20,7 @@ telegram.com
 web.telegram.org
 fortnite.gg
 fortnite.com
+playrust.io
 
 # Facepunch & Rust API
 facepunch.com

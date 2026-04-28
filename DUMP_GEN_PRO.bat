@@ -13,8 +13,8 @@ echo.
 :: Переходим в папку батника
 cd /d "%~dp0"
 
-set /p "USER_DOMAIN=Введите домен (например, figma.com или нажмите enter): "
-if "%USER_DOMAIN%"=="" set "USER_DOMAIN=figma.com"
+set /p "USER_DOMAIN=Введите домен (например, github.com или нажмите enter): "
+if "%USER_DOMAIN%"=="" set "USER_DOMAIN=github.com"
 
 set "OUT_FILE=tls_clienthello_max_ru.bin"
 set "PS_TEMP_SCRIPT=logic_v13.ps1"
