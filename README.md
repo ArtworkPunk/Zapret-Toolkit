@@ -6,7 +6,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-informational?style=for-the-badge)
 ![Status](https://img.shields.io/badge/DPI_Bypass-Active-success?style=for-the-badge)
 
-**Инженерное решение для обхода ТСПУ, DPI-фильтрации и восстановления доступа к заблокированным ресурсам**
+**Инженерное решение для настройки сетевых пакетов, десинхронизации DPI и оптимизации TCP/UDP соединений (включая ускорение YouTube и Discord**
 
 [🔍 Web Checker (DPI/TCP Analyzer)](https://artworkpunk.github.io/Zapret-Toolkit-Checker/) | [📦 Latest Release](https://github.com/ArtworkPunk/Zapret-Toolkit/releases)
 
